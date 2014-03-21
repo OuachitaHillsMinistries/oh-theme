@@ -75,7 +75,7 @@ function new_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 function isAcademy() {
-	if (is_category('College')) {
+	if (is_category('College') || is_home()) {
 		return False;
 	}
 	if (topParent()->post_title == 'Academy' || in_category('Academy') || is_category('Academy')) {
@@ -86,7 +86,7 @@ function isAcademy() {
 }
 
 function isCollege() {
-	if (is_category('Academy')) {
+	if (is_category('Academy') || is_home()) {
 		return False;
 	}
 	if (topParent()->post_title == 'College' || in_category('College') || is_category('College')) {

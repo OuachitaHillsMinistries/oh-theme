@@ -51,6 +51,7 @@ a:hover {
 #content {
 	height:100%;
 	overflow:hidden;
+	background-color:white;
 }
 
 #footer {
@@ -228,7 +229,7 @@ a:hover {
 	display: block;
 	height: 0;
 	overflow: hidden;
-	padding-bottom: 30%;
+	padding-bottom: 33.3%;
 }
 
 .flexslider .slides img {
@@ -256,6 +257,11 @@ a:hover {
 
 #content>header>h1 {
 	margin: 20px;
+}
+
+.fb-Loadmore img {
+	width: auto;
+	padding-bottom: 0;
 }
 
 article {
@@ -341,6 +347,12 @@ article {
 
 .widget-container li a:hover {
 	background-color:white;
+}
+
+.textwidget {
+	font-size: 13px;
+	line-height: 17px;
+	margin-top: 15px;
 }
 
 /* ===== Sidebar Calendar ===== */
@@ -472,7 +484,6 @@ article {
 	
 	.container {
 		border-right:240px solid #242424;
-		background-color:white;
 		border-radius: 0 0 4px 4px;
 	}
 	

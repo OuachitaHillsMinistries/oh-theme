@@ -20,6 +20,16 @@ if ( isCollege() && !isAcademy() ) {
 }
 ?>
 
+<!--
+<?php
+	echo " | isCollege(): " . isCollege();
+	echo " | isAcademy(): " . isAcademy();
+	echo " | topParent()->post_title: " . topParent()->post_title;
+	echo " | in_category('Academy'): " . in_category('Academy');
+	echo " | is_category('Academy'): " . is_category('Academy');
+?>
+-->
+
 <body <?php body_class($extraBodyClasses); ?>>
 	<div id="wrapper" class="hfeed">
 		<header class="main-header" role="banner">
