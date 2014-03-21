@@ -485,6 +485,7 @@ article {
 	.container {
 		border-right:240px solid #242424;
 		border-radius: 0 0 4px 4px;
+		background-color: white;
 	}
 	
 	.page-template-page-template-no-sidebar-php .container {
