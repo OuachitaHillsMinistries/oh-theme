@@ -1,15 +1,4 @@
 // JavaScript Document
-/*
-$(document).ready(function() {
-	$('.branding').after('<a href="#" class="toggle-search" title="Toggle search"><img src="/wp-content/themes/ouachitahills/img/search-icon-2.png" width="20" /></a>');
-	
-	$('.search').hide();
-	
-	$('.toggle-search').click(function() {
-		$('.search').toggle();
-	});
-});
-
 
 $(document).ready(function() {
 	$.fn.textWidth = function(){
@@ -24,41 +13,51 @@ $(document).ready(function() {
     };
     
     function neededNavSpace(buffer) {
-    	$('.menu').addClass('horizontal');
+    	$('.navigation').addClass('horizontal');
 		var navWidth = 0;
-		$('.menu>li').each(function() {
+		$('.secondary-nav>li').each(function() {
 			navWidth += ($(this).textWidth() + buffer);
 		});
 		return navWidth;
     }
     
-    var neededNavSpace = neededNavSpace(25);
-    
-    function availableNavSpace() {
-		return $(window).width() - $('.branding').width();
-    }
-	
-    $('.branding').after('<a href="#" class="toggle-menu" title="Toggle menu"><div></div><div></div><div></div><div></div><div></div></a>');
+    function addToggleButtons() {
+    	var toggleButton = '<a href="#" class="toggle-secondary-nav" title="Toggle secondary nav"><div></div><div></div><div></div><div></div><div></div>Toggle menu</a>';
 		
-	$('.toggle-menu').click(function() {
-		$('.search').hide();
-		$('.menu').toggle();
-	});
-	
-	$(window).resize(function(){
-		console.log('Needed: ' + neededNavSpace);
-		console.log('Available: ' + availableNavSpace());
-		if (availableNavSpace() > neededNavSpace) {
-			$('.menu').addClass('horizontal');
-			$('.menu').show();
-			$('.toggle-menu').hide();
-		} else {
-			$('.menu').removeClass('horizontal');
-			$('.menu').hide();
-			$('.toggle-menu').show();
-		}
-	});
-	
-	$(window).resize();
+		$('.secondary-nav').before(toggleButton);
+		$('.secondary-nav').append('<li class="toggle">' + toggleButton + '</li>');
+		
+		$('.toggle-secondary-nav').click(function() {
+			$('.secondary-nav').toggle();
+		});
+    }
+    
+    function setNavToHorizontal() {
+    	$('.navigation').addClass('horizontal');
+		$('.toggle-secondary-nav, .toggle').hide();
+		$('.secondary-nav').show();
+    }
+    
+    function setNavToVertical() {
+    	$('.navigation').removeClass('horizontal');
+		$('.toggle-secondary-nav, .toggle').css( "display", "block");
+		$('.secondary-nav').hide();
+    }
+    
+    function loadResizeFunction() {
+    	$(window).resize(function() {
+			if ( $(window).width() > neededNavSpace ) {
+				setNavToHorizontal()
+			} else {
+				setNavToVertical()
+			}
+		});
+		
+		$(window).resize();
+    }
+    
+    var neededNavSpace = neededNavSpace(1);
+    
+	addToggleButtons()
+	loadResizeFunction()
 });
-*/

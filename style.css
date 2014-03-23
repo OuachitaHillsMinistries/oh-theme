@@ -113,17 +113,26 @@ a:hover {
 
 /* ===== Navigation Colors ===== */
 
-.primary-nav li.home, .home .secondary-nav, .home .secondary-nav li {
+.primary-nav li.home,
+.home .toggle-secondary-nav,
+.home .secondary-nav,
+.home .secondary-nav li {
 	/* Home: */
 	background-color:black;
 }
 
-.primary-nav li.college, .college .secondary-nav, .college .secondary-nav li {
+.primary-nav li.college,
+.college .toggle-secondary-nav,
+.college .secondary-nav,
+.college .secondary-nav li {
 	/* College: */
 	background-color:#005C30;
 }
 
-.primary-nav li.academy, .academy .secondary-nav, .academy .secondary-nav li {
+.primary-nav li.academy,
+.academy .toggle-secondary-nav,
+.academy .secondary-nav,
+.academy .secondary-nav li {
 	/* Academy: */
 	background-color:#387798;
 }
@@ -144,46 +153,90 @@ a:hover {
 	border-radius: 4px 4px 0 0;
 }
 
-/* ===== Secondary Navigation ===== */
+/* ===== Mobile Secondary Navigation ===== */
 
-.secondary-nav {
-	min-height:36px;
-}
-
-.secondary-nav>li {
-	display:inline-block;
-	border-right:1px solid rgba(255, 255, 255, 0.3);
-	margin-left:-4px;
-}
-
-.secondary-nav>li:first-child {
-	margin-left:0;
-}
-
-.secondary-nav>li.page_item_has_children {
-	background: url('/img/Arrow Down 1.png') repeat 0 0 scroll;
+.toggle-secondary-nav {
+	display:block;
+	padding:10px;
 }
 
 .secondary-nav li {
-	position:relative;
+	padding-left:40px;
 }
 
-.secondary-nav li a {
+.secondary-nav .toggle {
+	padding-left:0;
+}
+
+.secondary-nav a {
+	display:block;
 	padding:10px;
-	display: block;
 }
 
-.secondary-nav li a:hover, .secondary-nav>li.current_page_item>a, .secondary-nav>li.current_page_ancestor>a {
+.toggle-secondary-nav:hover,
+.secondary-nav li a:hover,
+.secondary-nav li.current_page_item>a {
 	background-color:#F5F5F5;
 	color:black;
 	text-decoration:none;
 }
 
-.secondary-nav a {
+/* ===== Horizontal Secondary Navigation ===== */
+
+.horizontal .secondary-nav {
+	min-height:36px;
+	padding:0;
+}
+
+.horizontal .secondary-nav li {
+	position:relative;
+	padding:0;
+}
+
+.horizontal .secondary-nav li a {
+	padding:10px;
+	display: block;
+}
+
+.horizontal .secondary-nav a {
 	color:rgba(255, 255, 255, 0.95);;
 }
 
-.secondary-nav .children {
+/* Top Level */
+
+.horizontal .secondary-nav>li {
+	display:inline-block;
+	border-right:1px solid rgba(255, 255, 255, 0.3);
+	margin-left:-4px;
+}
+
+.horizontal .secondary-nav>li:first-child {
+	margin-left:0;
+}
+
+.horizontal .secondary-nav>li:first-child,
+.horizontal .secondary-nav>li:first-child>a {
+	border-radius:3px 0 0 0;
+}
+
+.horizontal .secondary-nav>li.current_page_item>a,
+.horizontal .secondary-nav>li.current_page_ancestor>a {
+	background-color:#F5F5F5;
+	color:black;
+	text-decoration:none;
+}
+
+.horizontal .secondary-nav>li.page_item_has_children {
+	background: url('/img/Arrow Down 1.png') repeat 0 0 scroll;
+}
+
+.horizontal .toggle {
+	
+}
+
+/* Sub Menus */
+
+.horizontal .secondary-nav .children {
 	position: absolute;
 	z-index:100;
 	display:none;
@@ -191,20 +244,20 @@ a:hover {
 	margin-left:1px;
 }
 
-.secondary-nav>li>.children {
+.horizontal .secondary-nav>li>.children {
 	left:-1px;
 }
 
-.secondary-nav .children .children {
+.horizontal .secondary-nav .children .children {
 	right:-176px;
 	top:-1px;
 }
 
-.secondary-nav li:hover>.children {
+.horizontal .secondary-nav li:hover>.children {
 	display:block;
 }
 
-.secondary-nav .children li {
+.horizontal .secondary-nav .children li {
 	margin-top:1px;
 }
 
@@ -426,7 +479,8 @@ article {
 	color:black;
 }
 
-.gce-widget-grid table.gce-calendar .gce-has-events, .gce-widget-grid table.gce-calendar .gce-today.gce-has-events {
+.gce-widget-grid table.gce-calendar .gce-has-events,
+.gce-widget-grid table.gce-calendar .gce-today.gce-has-events {
 	font-weight:bold;
 	color:#ccc;
 }
@@ -439,12 +493,14 @@ article {
 	text-shadow: 0 0 7px white;
 }
 
-.gce-widget-grid table.gce-calendar .gce-today, .gce-widget-grid table.gce-calendar .gce-today.gce-has-events {
+.gce-widget-grid table.gce-calendar .gce-today,
+.gce-widget-grid table.gce-calendar .gce-today.gce-has-events {
 	background-color:#ccc;
 	color:#242424;
 }
 
-.gce-calendar .gce-prev a, .gce-calendar .gce-next a {
+.gce-calendar .gce-prev a,
+.gce-calendar .gce-next a {
 	color:black;
 	font-size: 20px;
 	line-height: 10px;
@@ -464,7 +520,8 @@ article {
 	left:0;
 }
 
-.gce-calendar .gce-prev a:hover, .gce-calendar .gce-next a:hover {
+.gce-calendar .gce-prev a:hover,
+.gce-calendar .gce-next a:hover {
 	text-decoration: none;
 }
 
@@ -506,10 +563,6 @@ article {
 	
 	.secondary-nav {
 		border-radius: 4px 4px 0 0;
-	}
-	
-	.secondary-nav>li:first-child, .secondary-nav>li:first-child>a {
-		border-radius:3px 0 0 0;
 	}
 	
 	.container {
