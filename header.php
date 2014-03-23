@@ -12,11 +12,11 @@
 
 <?php
 if ( isCollege() && !isAcademy() ) {
-	$extraBodyClasses = 'college';
+	$extraBodyClasses = 'college no-js';
 } elseif ( isAcademy() && !isCollege() ) {
-	$extraBodyClasses = 'academy';
+	$extraBodyClasses = 'academy no-js';
 } else {
-	$extraBodyClasses = 'home';
+	$extraBodyClasses = 'home no-js';
 }
 ?>
 

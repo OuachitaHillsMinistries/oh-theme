@@ -29,6 +29,7 @@ $(document).ready(function() {
 		
 		$('.toggle-secondary-nav').click(function() {
 			$('.secondary-nav').toggle();
+			$('.toggle-secondary-nav').toggleClass('up');
 		});
     }
     
@@ -44,7 +45,7 @@ $(document).ready(function() {
 		$('.secondary-nav').hide();
     }
     
-    function loadResizeFunction() {
+    function loadResizeFunction(neededSpace) {
     	$(window).resize(function() {
     		var availableSpace = $('body').width();
     		
@@ -58,14 +59,17 @@ $(document).ready(function() {
 		$(window).resize();
     }
     
-    function initiateResponsiveNavigation() {
-		neededSpace = neededNavSpace(20);
-    
-		addToggleButtons();
-		loadResizeFunction();
+    function removeRegressionClass() {
+    	$('body').removeClass('no-js');
     }
     
-    var neededSpace
+    function initiateResponsiveNavigation() {
+		var neededSpace = neededNavSpace(20);
     
+		addToggleButtons();
+		loadResizeFunction(neededSpace);
+    }
+    
+    removeRegressionClass()
     initiateResponsiveNavigation()
 });
