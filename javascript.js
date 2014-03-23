@@ -46,18 +46,26 @@ $(document).ready(function() {
     
     function loadResizeFunction() {
     	$(window).resize(function() {
-			if ( $(window).width() > neededNavSpace ) {
-				setNavToHorizontal()
+    		var availableSpace = $('body').width();
+    		
+			if ( availableSpace > neededSpace ) {
+				setNavToHorizontal();
 			} else {
-				setNavToVertical()
+				setNavToVertical();
 			}
 		});
 		
 		$(window).resize();
     }
     
-    var neededNavSpace = neededNavSpace(1);
+    function initiateResponsiveNavigation() {
+		neededSpace = neededNavSpace(20);
     
-	addToggleButtons()
-	loadResizeFunction()
+		addToggleButtons();
+		loadResizeFunction();
+    }
+    
+    var neededSpace
+    
+    initiateResponsiveNavigation()
 });

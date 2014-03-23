@@ -226,12 +226,24 @@ a:hover {
 	text-decoration:none;
 }
 
-.horizontal .secondary-nav>li.page_item_has_children {
-	background: url('/img/Arrow Down 1.png') repeat 0 0 scroll;
+.horizontal .secondary-nav>li.page_item_has_children>a {
+	padding-right:28px;
 }
 
-.horizontal .toggle {
-	
+.horizontal .secondary-nav>li.page_item_has_children>a:after {
+    content:"";
+    width:0;
+    height:0;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-top:7px solid white;
+    position:absolute;
+    top:15px;
+    right:10px;
+}
+
+.horizontal .secondary-nav>li.page_item_has_children>a:hover:after {
+    border-top:7px solid black;
 }
 
 /* Sub Menus */
@@ -259,6 +271,22 @@ a:hover {
 
 .horizontal .secondary-nav .children li {
 	margin-top:1px;
+}
+
+.horizontal .secondary-nav li li.page_item_has_children>a:after {
+    content:"";
+    width:0;
+    height:0;
+    border-top:4px solid transparent;
+    border-bottom:4px solid transparent;
+    border-left:7px solid white;
+    position:absolute;
+    top:14px;
+    right:10px;
+}
+
+.horizontal .secondary-nav li li.page_item_has_children>a:hover:after {
+    border-left:7px solid black;
 }
 
 /* ===== Slider ===== */
