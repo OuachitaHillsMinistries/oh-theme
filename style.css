@@ -280,6 +280,8 @@ a:hover {
     right:10px;
 }
 
+.horizontal .secondary-nav>li.page_item_has_children.current_page_item>a:after,
+.horizontal .secondary-nav>li.page_item_has_children.current_page_ancestor>a:after,
 .horizontal .secondary-nav>li.page_item_has_children>a:hover:after {
     border-top:7px solid black;
 }
@@ -323,6 +325,8 @@ a:hover {
     right:10px;
 }
 
+.horizontal .secondary-nav li li.page_item_has_children.current_page_item>a:after,
+.horizontal .secondary-nav li li.page_item_has_children.current_page_ancestor>a:after,
 .horizontal .secondary-nav li li.page_item_has_children>a:hover:after {
     border-left:7px solid black;
 }
@@ -493,6 +497,7 @@ article {
 	display: block;
 	padding:7px;
 	color:black;
+	font-size:16px;
 }
 
 .widget-container li a:hover {
@@ -502,7 +507,6 @@ article {
 .textwidget {
 	font-size: 13px;
 	line-height: 17px;
-	margin-top: 15px;
 }
 
 /* ===== Sidebar Calendar ===== */
