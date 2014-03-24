@@ -634,7 +634,7 @@ article {
 	}
 	
 	.container {
-		border-right:240px solid #242424;
+		border-right:260px solid #242424;
 		border-radius: 0 0 4px 4px;
 		background-color: white;
 	}
@@ -650,8 +650,8 @@ article {
 	
 	#sidebar {
 		float:right;
-		width:240px;
-		margin-right:-240px;
+		width:260px;
+		margin-right:-260px;
 	}
 	
 	#footer {
