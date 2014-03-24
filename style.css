@@ -56,6 +56,15 @@ a:hover {
 
 #footer {
 	padding:20px;
+	overflow:hidden;
+}
+
+#copyright {
+	float:left;
+}
+
+.credits {
+	float:right;
 }
 
 /* ===== Header ===== */
