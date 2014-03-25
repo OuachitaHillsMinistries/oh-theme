@@ -43,7 +43,7 @@ a:hover {
 }
 
 .container img {
-	width:100%;
+	max-width:100%;
 	height:auto;
 	padding-bottom:20px;
 }
