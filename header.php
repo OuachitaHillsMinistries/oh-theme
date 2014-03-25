@@ -42,9 +42,9 @@ if ( isCollege() && !isAcademy() ) {
 					<?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
 				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 			</section>
-			<div class="search">
+			<!--<div class="search">
 				<?php get_search_form(); ?>
-			</div>
+			</div>-->
 			<nav class="navigation" role="navigation">
 				
 				<?php
