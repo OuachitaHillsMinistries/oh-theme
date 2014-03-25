@@ -65,7 +65,9 @@ return $count;
 }
 }
 
-# FOR THEME:
+# =================== My Additions ===================
+
+# === FOR THEME:
 
 add_theme_support( 'post-thumbnails' );
 
@@ -142,7 +144,37 @@ function myIsSingular() {
 	return is_singular() && !is_page_template('page-template-category.php');
 }
 
-# FOR PLUGINS:
+function secondaryNavArgs($parentID) {
+	return array(
+		'authors'      => '',
+		'child_of'     => $parentID,
+		'date_format'  => get_option('date_format'),
+		'depth'        => 0,
+		'echo'         => 1,
+		'exclude'      => '',
+		'include'      => '',
+		'link_after'   => '',
+		'link_before'  => '',
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'show_date'    => '',
+		'sort_column'  => 'menu_order',
+		'title_li'     => '', 
+		'walker'       => ''
+	);
+}
+
+function regionalSecondaryNavArgs() {
+	if ( isCollege() && !isAcademy() ) {
+		return secondaryNavArgs( collegeHomeID() );
+	} elseif ( isAcademy() && !isCollege() ) {
+		return secondaryNavArgs( academyHomeID() );
+	} else {
+		return secondaryNavArgs( 0 );
+	}
+}
+
+# === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
 {

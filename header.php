@@ -47,64 +47,6 @@ if ( isCollege() && !isAcademy() ) {
 			</div>-->
 			<nav class="navigation" role="navigation">
 				
-				<?php
-					if ( isCollege() && !isAcademy() ) {
-						$secondaryNavArgs = array(
-							'authors'      => '',
-							'child_of'     => collegeHomeID(),
-							'date_format'  => get_option('date_format'),
-							'depth'        => 0,
-							'echo'         => 1,
-							'exclude'      => '',
-							'include'      => '',
-							'link_after'   => '',
-							'link_before'  => '',
-							'post_type'    => 'page',
-							'post_status'  => 'publish',
-							'show_date'    => '',
-							'sort_column'  => 'menu_order',
-							'title_li'     => '', 
-							'walker'       => ''
-						);
-					} elseif ( isAcademy() && !isCollege() ) {
-						$secondaryNavArgs = array(
-							'authors'      => '',
-							'child_of'     => academyHomeID(),
-							'date_format'  => get_option('date_format'),
-							'depth'        => 0,
-							'echo'         => 1,
-							'exclude'      => '',
-							'include'      => '',
-							'link_after'   => '',
-							'link_before'  => '',
-							'post_type'    => 'page',
-							'post_status'  => 'publish',
-							'show_date'    => '',
-							'sort_column'  => 'menu_order',
-							'title_li'     => '', 
-							'walker'       => ''
-						);
-					} else {
-						$secondaryNavArgs = array(
-							'authors'      => '',
-							'child_of'     => 0,
-							'date_format'  => get_option('date_format'),
-							'depth'        => 0,
-							'echo'         => 1,
-							'exclude'      => '',
-							'include'      => '',
-							'link_after'   => '',
-							'link_before'  => '',
-							'post_type'    => 'page',
-							'post_status'  => 'publish',
-							'show_date'    => '',
-							'sort_column'  => 'menu_order',
-							'title_li'     => '', 
-							'walker'       => ''
-						);
-					}
-				?>
-				
 				<ul class="primary-nav">
 					<li class="home<?php if (is_home() || is_front_page()) { echo ' current_page_item'; } ?>">
 						<a href="/">Home</a>
@@ -118,7 +60,7 @@ if ( isCollege() && !isAcademy() ) {
 				</ul>
 				
 				<ul class="secondary-nav">
-					<?php wp_list_pages( $secondaryNavArgs ); ?>
+					<?php wp_list_pages( regionalSecondaryNavArgs() ); ?>
 				</ul>
 			</nav>
 		</header>
