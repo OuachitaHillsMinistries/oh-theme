@@ -468,24 +468,24 @@ a:hover {
   width: auto;
   padding-bottom: 0; }
 
-  article.single ul,
-  article.single ol {
+  #content ul,
+  #content ol {
     padding-left: 25px; }
-  article.single ul {
+  #content ul {
     list-style-type: disc; }
-  article.single ol {
+  #content ol {
     list-style-type: decimal; }
-  article.single ul li,
-  article.single ol li {
+  #content ul li,
+  #content ol li {
     margin-bottom: 5px; }
-  article.single dt {
+  #content dt {
     position: relative;
     float: left;
     clear: left;
     width: 80px;
     font-weight: bold;
     margin: 3px 0; }
-  article.single dd {
+  #content dd {
     border-left: 1px solid black;
     margin: 0 0 20px 100px;
     padding: 3px 0 5px 20px; }
