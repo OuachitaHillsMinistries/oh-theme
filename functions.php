@@ -185,3 +185,11 @@ function set_flexslider_hg_rotators( $rotators = array() )
 
 }
 add_filter('flexslider_hg_rotators', 'set_flexslider_hg_rotators');
+
+// SASS/SCSS Stylesheet Definition
+function generate_css() {
+if(function_exists('wpsass_define_stylesheet') && !is_admin()) {
+wpsass_define_stylesheet("sass.scss");
+}
+}
+add_action( 'after_setup_theme', 'generate_css' );
