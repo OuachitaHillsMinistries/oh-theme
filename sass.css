@@ -357,6 +357,15 @@ body {
   width: auto;
   padding-bottom: 0; }
 
+#fancybox-wrap,
+#fancybox-wrap * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+#fancybox-title {
+  text-align: left; }
+
 /*
  * Responsive iFrame
  */
