@@ -1,0 +1,39 @@
+// Base
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top:ohSizeStep(1);
+  margin-bottom:ohSizeStep(.5);
+  font-weight:normal;
+}
+
+h1 { font-size: ohSizeStep(7); }
+h2 { font-size: ohSizeStep(6); }
+h3 { font-size: ohSizeStep(5); }
+h4, .widget-title { font-size: ohSizeStep(4); }
+h5 { font-size: ohSizeStep(3); }
+h6 { font-size: ohSizeStep(2); }
+
+p {
+  line-height: ohSizeStep(2);
+  margin-bottom: ohSizeStep(1);
+}
+
+a {
+  text-decoration:none;
+  color: $academyBlue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width:100%;
+  height:auto;
+}

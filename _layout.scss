@@ -1,0 +1,46 @@
+// Layout
+
+html {
+  margin:0 auto;
+  background-color:#EFEFEF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: ohSizeStep(1);
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.container {
+  background-color:#242424;
+}
+
+.main-header {
+  color:white;
+  width:100%;
+  position:relative;
+}
+
+#content {
+  height:100%;
+  overflow:hidden;
+  background-color:white;
+}
+
+#sidebar {
+  padding:ohSizeStep(.5);
+  overflow:hidden;
+  
+  ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+  }
+}
+
+#footer {
+  padding:ohSizeStep(1);
+  overflow:hidden;
+}
