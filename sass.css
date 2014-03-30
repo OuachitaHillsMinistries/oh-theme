@@ -105,7 +105,7 @@ body {
 
 .branding img {
   width: 100%;
-  max-width: 331px;
+  max-width: 350px;
   padding: 15px; }
 
 .site-title {
@@ -273,9 +273,7 @@ body {
     z-index: 100;
     display: none;
     width: 175px;
-    margin-left: 1px;
-    padding: 0;
-    list-style-type: none; }
+    margin-left: 1px; }
   .horizontal .secondary-nav>li>.children {
     left: -1px; }
   .horizontal .secondary-nav .children .children {
@@ -647,9 +645,7 @@ article {
     z-index: 100;
     display: none;
     width: 175px;
-    margin-left: 1px;
-    padding: 0;
-    list-style-type: none; }
+    margin-left: 1px; }
   .no-js .secondary-nav>li>.children {
     left: -1px; }
   .no-js .secondary-nav .children .children {

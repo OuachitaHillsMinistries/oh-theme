@@ -36,7 +36,7 @@ if ( isCollege() && !isAcademy() ) {
 			<section class="branding">
 				<div class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home">
-						<img src="/wp-content/themes/ouachitahills/img/OHM%20Logo%20Responsive%20Color%201%20Small.png" alt="Ouachita Hills Ministries" />
+						<img src="/wp-content/themes/ouachitahills/img/OHM%20Logo%20Responsive%20Color%201%20Medium.png" alt="Ouachita Hills Ministries" />
 					<?php echo "<span class='replace'>" . esc_html(get_bloginfo( 'name' )) . "</span></a>"; ?>
 				</div>
 				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
