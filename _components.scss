@@ -1,9 +1,11 @@
 // Components
 
-$homeColor = black;
-$collegeGreen = #005C30;
-$academyBlue = #387798;
-$baseSize = 11.5px;
+$homeColor: black;
+$collegeGreen: #005C30;
+$academyBlue: #387798;
+
+$baseSize: 11.5px;
+$marginBreakPoint: ohSizeStep(100);
 
 @function ohSizeStep($step) {
   @return $baseSize * (1 + ($step/3));

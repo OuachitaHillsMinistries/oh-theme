@@ -4,7 +4,7 @@
 @import 'base';
 @import 'layout';
 
-$hello = 'h';
+$hello: 'h';
 
 .clear {
   clear:both;
@@ -530,6 +530,6 @@ article {
 	@include imageLeftPlural();
 }
 
-@media all and (min-width: 530px) and (max-width: 700px) {
+@media all and (min-width: 530px) and (max-width: $marginBreakPoint) {
 	@include imageLeftPlural();
 }

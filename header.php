@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width" />
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/sass.css" />
+	<script src="<?php bloginfo('template_directory'); ?>/jquery-2.0.3.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/javascript.js"></script>
 	<?php wp_head(); ?>
 </head>
@@ -36,7 +37,7 @@ if ( isCollege() && !isAcademy() ) {
 			<section class="branding">
 				<div class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home">
-						<img src="/wp-content/themes/ouachitahills/img/OHM%20Logo%20Responsive%20Color%201%20Medium.png" alt="Ouachita Hills Ministries" />
+						<img src="<?php bloginfo('template_directory'); ?>/img/OHM-Logo-Responsive-Color-1-Medium.png" alt="Ouachita Hills Ministries" />
 					<?php echo "<span class='replace'>" . esc_html(get_bloginfo( 'name' )) . "</span></a>"; ?>
 				</div>
 				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
@@ -48,7 +49,7 @@ if ( isCollege() && !isAcademy() ) {
 				
 				<ul class="primary-nav">
 					<li class="home<?php if (is_home() || is_front_page()) { echo ' current_page_item'; } ?>">
-						<a href="/">Home</a>
+						<a href="<?php echo home_url() ?>">Home</a>
 					</li>
 					<li class="college<?php if (isCollege() && !isAcademy()) { echo ' current_page_item'; } ?>">
 						<a href="<?php echo collegeHomeURL() ?>">College</a>
