@@ -5,7 +5,10 @@ $collegeGreen: #005C30;
 $academyBlue: #387798;
 
 $baseSize: 11.5px;
-$marginBreakPoint: ohSizeStep(100);
+
+// Sizes in terms of ohSizeStep()
+$sidebarWidth: 75;
+$marginBreakPoint: 200;
 
 @function ohSizeStep($step) {
   @return $baseSize * (1 + ($step/3));
