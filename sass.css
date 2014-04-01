@@ -924,7 +924,7 @@ article {
     display: none;
   }
 }
-@media all and (min-width: 530px) and (max-width: 778.16667px) {
+@media all and (min-width: 530px) and (max-width: 777.16667px) {
   /* line 125, _components.scss */
   .plural {
     position: relative;

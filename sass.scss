@@ -513,6 +513,6 @@ article {
 	@include imageLeftPlural();
 }
 
-@media all and (min-width: 530px) and (max-width: ohSizeStep($marginBreakPoint)) {
+@media all and (min-width: 530px) and (max-width: ohSizeStep($marginBreakPoint) - 1) {
 	@include imageLeftPlural();
 }
