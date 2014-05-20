@@ -86,6 +86,13 @@ $hello: 'heloo';
 	background-color:$academyBlue;
 }
 
+.primary-nav li.store,
+.store .toggle-secondary-nav,
+.store .secondary-nav,
+.store .secondary-nav li {
+  background-color:$storeColor;
+}
+
 /* ===== Primary Navigation ===== */
 
 .primary-nav {
