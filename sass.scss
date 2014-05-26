@@ -520,6 +520,12 @@ article {
 	@include imageLeftPlural();
 }
 
+@media all and (min-width: ohSizeStep($marginBreakPoint) - 1) and (max-width: 1000px) {
+  .flexslider {
+    @include imageLeftPlural();
+  }
+}
+
 @media all and (min-width: 530px) and (max-width: ohSizeStep($marginBreakPoint) - 1) {
 	@include imageLeftPlural();
 }
