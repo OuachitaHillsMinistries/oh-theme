@@ -65,6 +65,12 @@ img {
   height: auto;
 }
 
+/* line 41, _base.scss */
+#content table {
+  max-width: 100%;
+  display: block;
+}
+
 /* line 3, _layout.scss */
 html {
   margin: 0 auto;
