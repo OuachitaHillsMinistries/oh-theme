@@ -4,8 +4,6 @@
 @import 'base';
 @import 'layout';
 
-$hello: 'heloo';
-
 .clear {
   clear:both;
 }
@@ -68,36 +66,37 @@ $hello: 'heloo';
 .primary-nav li.home,
 .home .toggle-secondary-nav,
 .home .secondary-nav,
-.home .secondary-nav li {
+.home .secondary-nav li li {
 	background-color:$homeColor;
 }
 
 .primary-nav li.college,
 .college .toggle-secondary-nav,
 .college .secondary-nav,
-.college .secondary-nav li {
+.college .secondary-nav li li {
 	background-color:$collegeGreen;
 }
 
 .primary-nav li.academy,
 .academy .toggle-secondary-nav,
 .academy .secondary-nav,
-.academy .secondary-nav li {
+.academy .secondary-nav li li {
 	background-color:$academyBlue;
 }
 
 .primary-nav li.store,
 .store .toggle-secondary-nav,
 .store .secondary-nav,
-.store .secondary-nav li {
+.store .secondary-nav li li {
   background-color:$storeColor;
 }
 
 /* ===== Primary Navigation ===== */
 
 .primary-nav {
-	padding:0 10px;
-	margin:0;
+	padding: 0 10px;
+	margin: 0;
+  z-index: 1000;
 	
 	li {
 	  display:inline-block;
@@ -107,7 +106,19 @@ $hello: 'heloo';
 	
 	a {
 	  color:white;
+      position:relative;
+      z-index: 2000;
 	}
+
+  &:before {
+    background-color:rgba(255, 255, 255, .15);
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+  }
 }
 
 /* ===== Mobile Secondary Navigation ===== */
@@ -120,6 +131,7 @@ $hello: 'heloo';
 
 .secondary-nav {
   margin:0;
+  background: linear-gradient(rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
   
   li {
     padding-left:40px;
@@ -141,10 +153,21 @@ $hello: 'heloo';
 	}
 }
 
+.secondary-nav:before {
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-bottom:1px solid rgba(0, 0, 0, .2);
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
 .toggle-secondary-nav:hover,
 .secondary-nav li a:hover,
 .secondary-nav li.current_page_item>a {
-	background-color:#F5F5F5;
+	background-color:#EFEFEF;
 	color:black;
 	text-decoration:none;
 }
@@ -492,7 +515,7 @@ article {
 	.primary-nav {
 		position: absolute;
 		right: 0;
-		top: -28px;
+		top: -27px;
 	}
 	
 	.secondary-nav,

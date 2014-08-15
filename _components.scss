@@ -116,7 +116,6 @@ $marginBreakPoint: 200;
   }
   
   li li.page_item_has_children.current_page_item>a:after,
-  li li.page_item_has_children.current_page_ancestor>a:after,
   li li.page_item_has_children>a:hover:after {
       border-left:7px solid black;
   }
