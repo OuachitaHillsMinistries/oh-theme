@@ -3,14 +3,15 @@
 html {
   margin:0 auto;
   background-color:#EFEFEF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: ohSizeStep(1);
-  height:100%;
 }
 
 body {
   margin:0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: ohSizeStep(1);
+  height:100%;
+  line-height:normal;
 }
 
 .main-header {

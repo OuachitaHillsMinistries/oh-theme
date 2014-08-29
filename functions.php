@@ -174,6 +174,9 @@ function regionalSecondaryNavArgs() {
 	}
 }
 
+// Add CSS to Visual Editor
+add_editor_style('sass.css');
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
