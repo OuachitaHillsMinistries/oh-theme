@@ -238,7 +238,7 @@
 	height:auto;
 }
 
-body .flexslider-hg.flexslider ul.slides > li {
+body .flexslider-hg.flexslider ul.slides > li:first-child {
   display:list-item;
 }
 
