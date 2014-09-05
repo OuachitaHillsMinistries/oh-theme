@@ -342,6 +342,9 @@ body {
 .flexslider .slides img {
   height: auto; }
 
+body .flexslider-hg.flexslider ul.slides > li:first-child {
+  display: list-item; }
+
 #flexslider_hg_homepage .flex-control-nav,
 #flexslider_hg_college .flex-control-nav,
 #flexslider_hg_academy .flex-control-nav {
