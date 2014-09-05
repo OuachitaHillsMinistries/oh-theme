@@ -181,9 +181,9 @@ add_editor_style('sass.css');
 
 function set_flexslider_hg_rotators( $rotators = array() )
 {
-    $rotators['homepage']         = array( 'size' => 'homepage-rotator', 'heading_tag' => 'h1', 'options' => "{animation: 'slide'}" );
-    $rotators['college']         = array( 'size' => 'homepage-rotator', 'heading_tag' => 'h1', 'options' => "{animation: 'slide'}" );
-    $rotators['academy']         = array( 'size' => 'homepage-rotator', 'heading_tag' => 'h1', 'options' => "{animation: 'slide'}" );
+    $rotators['homepage']         = array( 'size' => 'homepage-rotator', 'heading_tag' => 'h1' );
+    $rotators['college']         = array( 'size' => 'homepage-rotator', 'heading_tag' => 'h1' );
+    $rotators['academy']         = array( 'size' => 'homepage-rotator', 'heading_tag' => 'h1' );
     return $rotators;
 
 }
