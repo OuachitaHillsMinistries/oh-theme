@@ -65,11 +65,11 @@ $(document).ready(function() {
     
     function initiateResponsiveNavigation() {
 		var neededSpace = neededNavSpace(20);
-    
+
 		addToggleButtons();
 		loadResizeFunction(neededSpace);
     }
-    
-    removeRegressionClass()
-    initiateResponsiveNavigation()
+
+    removeRegressionClass();
+    initiateResponsiveNavigation();
 });
