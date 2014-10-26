@@ -62,13 +62,11 @@ body {
   width: 100%;
   position: relative; }
 
-.container {
-  background-color: #242424; }
-  @media all and (min-width: 778.16667px) {
-    .container {
-      border-right: 299px solid #242424;
-      border-radius: 0 0 4px 4px;
-      background-color: white; } }
+@media all and (min-width: 778.16667px) {
+  .container {
+    border-right: 203.16667px solid #F5F5F5;
+    border-radius: 0 0 4px 4px;
+    background-color: white; } }
 
 #content {
   height: 100%;
@@ -81,7 +79,8 @@ body {
 
 #sidebar {
   padding: 13.41667px;
-  overflow: hidden; }
+  overflow: hidden;
+  color: #242424; }
   #sidebar ul {
     list-style-type: none;
     margin: 0;
@@ -89,8 +88,8 @@ body {
   @media all and (min-width: 778.16667px) {
     #sidebar {
       float: right;
-      width: 299px;
-      margin-right: -299px; } }
+      width: 203.16667px;
+      margin-right: -203.16667px; } }
 
 #footer {
   padding: 15.33333px;
@@ -150,7 +149,7 @@ body {
 .college .toggle-secondary-nav,
 .college .secondary-nav,
 .college .secondary-nav li li {
-  background-color: #005c30; }
+  background-color: #005C30; }
 
 .primary-nav li.academy,
 .academy .toggle-secondary-nav,
@@ -432,7 +431,6 @@ article {
 
 #nav-below {
   padding: 5px 20px;
-  background-color: #F5F5F5;
   overflow: hidden; }
 
 .nav-previous {
@@ -448,20 +446,10 @@ article {
   margin-bottom: 5px; }
 
 .widget-container {
-  color: white;
   margin-bottom: 15.33333px;
   padding: 10px; }
   .widget-container li {
-    margin: 2px 0; }
-    .widget-container li a {
-      text-decoration: none;
-      background-color: #ccc;
-      display: block;
-      padding: 7px;
-      color: black;
-      font-size: 16px; }
-      .widget-container li a:hover {
-        background-color: white; }
+    margin-top: 10px; }
 
 .textwidget {
   font-size: 13px;
@@ -699,3 +687,5 @@ article {
 
   .plural > a:first-child img {
     display: none; } }
+
+/*# sourceMappingURL=sass.css.map */
