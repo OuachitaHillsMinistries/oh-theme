@@ -76,6 +76,16 @@ function new_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
+function setup_theme_admin_menus() {
+    add_submenu_page('themes.php', 'OH Theme Settings', 'OH Theme', 'manage_options', 'oh-theme-settings', 'createSettingsPanel');
+}
+
+add_action("admin_menu", "setup_theme_admin_menus");
+
+function createSettingsPanel() {
+    echo 'Hello, world!';
+}
+
 function isAcademy() {
 	if (is_category('College') || is_home()) {
 		return False;
