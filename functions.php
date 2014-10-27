@@ -83,7 +83,31 @@ function setup_theme_admin_menus() {
 add_action("admin_menu", "setup_theme_admin_menus");
 
 function createSettingsPanel() {
-    echo 'Hello, world!';
+    if (!current_user_can('manage_options')) {
+        wp_die('You do not have sufficient permissions to access this page.');
+    }
+
+    $panelUrl = get_admin_url( 0, 'themes.php?page=oh-theme-settings' );
+
+    if(isset($_POST['streaming'])) {
+        update_option('streamingUrl',$_POST['streaming']);
+    }
+
+    $streamingUrl = get_option('streamingUrl');
+
+    echo "
+        <h2>Ouachita Hills Theme Options</h2>
+        <form method='post' action='$panelUrl'>
+            <label for=\"streaming\">
+                Streaming URL:
+            </label>
+            <br />
+            <input type=\"text\" name=\"streaming\" size=\"50\" value='$streamingUrl' />
+            <br /><br />
+            <input type='submit' value='Save Settings' />
+        </form>
+    ";
+
 }
 
 function isAcademy() {
