@@ -76,6 +76,40 @@ function new_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
+function setup_theme_admin_menus() {
+    add_submenu_page('themes.php', 'OH Theme Settings', 'OH Theme', 'manage_options', 'oh-theme-settings', 'createSettingsPanel');
+}
+
+add_action("admin_menu", "setup_theme_admin_menus");
+
+function createSettingsPanel() {
+    if (!current_user_can('manage_options')) {
+        wp_die('You do not have sufficient permissions to access this page.');
+    }
+
+    $panelUrl = get_admin_url( 0, 'themes.php?page=oh-theme-settings' );
+
+    if(isset($_POST['streaming'])) {
+        update_option('streamingUrl',$_POST['streaming']);
+    }
+
+    $streamingUrl = get_option('streamingUrl');
+
+    echo "
+        <h2>Ouachita Hills Theme Options</h2>
+        <form method='post' action='$panelUrl'>
+            <label for=\"streaming\">
+                Streaming URL:
+            </label>
+            <br />
+            <input type=\"text\" name=\"streaming\" size=\"50\" value='$streamingUrl' />
+            <br /><br />
+            <input type='submit' value='Save Settings' />
+        </form>
+    ";
+
+}
+
 function isAcademy() {
 	if (is_category('College') || is_home()) {
 		return False;

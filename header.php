@@ -61,6 +61,7 @@ if ( isCollege() && !isAcademy() ) {
 				
 				<ul class="secondary-nav">
 					<?php wp_list_pages( regionalSecondaryNavArgs() ); ?>
+                    <li><a href="<?php echo get_option('streamingUrl'); ?>" target="_blank">Live</a></li>
 				</ul>
 			</nav>
 		</header>

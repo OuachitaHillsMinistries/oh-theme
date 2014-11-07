@@ -351,7 +351,6 @@ article {
 
 #nav-below {
 	padding:5px 20px;
-	background-color: #F5F5F5;
 	overflow:hidden;
 }
 
@@ -372,26 +371,12 @@ article {
 }
 
 .widget-container {
-	color:white;
 	margin-bottom:ohSizeStep(1);
 	padding:10px;
-	
-	li {
-	  margin:2px 0;
-	  
-	  a {
-	    text-decoration: none;
-      background-color: #ccc;
-      display: block;
-      padding:7px;
-      color:black;
-      font-size:16px;
-      
-      &:hover {
-        background-color:white;
-      }
-	  }
-	}
+
+  li {
+    margin-top:10px;
+  }
 }
 
 .textwidget {

@@ -8,7 +8,7 @@ $storeColor: grey;
 $baseSize: 11.5px;
 
 // Sizes in terms of ohSizeStep()
-$sidebarWidth: 75;
+$sidebarWidth: 50;
 $marginBreakPoint: 200;
 
 @function ohSizeStep($step) {
@@ -124,19 +124,33 @@ $marginBreakPoint: 200;
 @mixin imageLeftPlural() {
   .plural {
     position:relative;
-    padding-left:36%;
   }
   
   .plural>a:first-child {
+    display: inline-block;
+    position: relative;
+    float:left;
+    margin-right:20px;
+    margin-bottom: 20px;
     width: 33.3%;
-    height: 100%;
-    position: absolute;
     top: 0;
     left: 0;
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
     -o-background-size: cover !important;
     background-size: cover !important;
+  }
+
+  .plural:nth-child(even)>a:first-child {
+    float:right;
+    margin-left:20px;
+    margin-right: 0;
+  }
+
+  .plural>a:first-child:after {
+    content: '';
+    display: block;
+    margin-top: 75%;
   }
   
   .plural>a:first-child img {
