@@ -637,14 +637,14 @@ article {
       border-left: 7px solid black; } }
 @media all and (min-width: 1000px) {
   .plural {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
 
   .plural > a:first-child {
     display: inline-block;
     position: relative;
     float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 0 20px 0 0;
     width: 33.3%;
     top: 0;
     left: 0;
@@ -655,8 +655,7 @@ article {
 
   .plural:nth-child(even) > a:first-child {
     float: right;
-    margin-left: 20px;
-    margin-right: 0; }
+    margin: 0 0 0 20px; }
 
   .plural > a:first-child:after {
     content: '';
@@ -667,13 +666,13 @@ article {
     display: none; } }
 @media all and (min-width: 777.16667px) and (max-width: 1000px) {
   .flexslider .plural {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
   .flexslider .plural > a:first-child {
     display: inline-block;
     position: relative;
     float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 0 20px 0 0;
     width: 33.3%;
     top: 0;
     left: 0;
@@ -683,8 +682,7 @@ article {
     background-size: cover !important; }
   .flexslider .plural:nth-child(even) > a:first-child {
     float: right;
-    margin-left: 20px;
-    margin-right: 0; }
+    margin: 0 0 0 20px; }
   .flexslider .plural > a:first-child:after {
     content: '';
     display: block;
@@ -693,14 +691,14 @@ article {
     display: none; } }
 @media all and (min-width: 530px) and (max-width: 777.16667px) {
   .plural {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
 
   .plural > a:first-child {
     display: inline-block;
     position: relative;
     float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 0 20px 0 0;
     width: 33.3%;
     top: 0;
     left: 0;
@@ -711,8 +709,7 @@ article {
 
   .plural:nth-child(even) > a:first-child {
     float: right;
-    margin-left: 20px;
-    margin-right: 0; }
+    margin: 0 0 0 20px; }
 
   .plural > a:first-child:after {
     content: '';
