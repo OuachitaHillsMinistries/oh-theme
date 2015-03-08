@@ -1,18 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class((myIsSingular() ? 'single' : 'plural')); ?>>
-    <?php if (has_post_thumbnail() && !myIsSingular()) {
-        $domsxe = simplexml_load_string(get_the_post_thumbnail());
-        if (is_object($domsxe)) {
-            $thumbnailsrc = $domsxe->attributes()->src; ?>
-
-            <a
-                href="<?php the_permalink(); ?>"
-                title="<?php the_title_attribute(); ?>"
-                rel="bookmark" style="background: url('<?php echo $thumbnailsrc; ?>') no-repeat center center scroll;"
-                >
-                <?php echo get_the_post_thumbnail(NULL, 'large') ?>
-            </a>
-        <?php }
-    } ?>
+    <?php echo getPostThumbnail(); ?>
     <div class="details">
         <header>
             <?php if (myIsSingular()) {
