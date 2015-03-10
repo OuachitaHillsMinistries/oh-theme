@@ -70,6 +70,8 @@ return $count;
 # === FOR THEME:
 
 add_theme_support( 'post-thumbnails' );
+add_image_size( 'ohThumb', 400, 400 );
+add_editor_style('sass.css'); // Add CSS to Visual Editor
 
 function new_excerpt_more( $more ) {
 	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Continue Reading...</a>';
@@ -208,8 +210,28 @@ function regionalSecondaryNavArgs() {
 	}
 }
 
-// Add CSS to Visual Editor
-add_editor_style('sass.css');
+function getPostThumbnail() {
+	if (shouldUseThumbnail()) {
+		$thumb = get_the_post_thumbnail(null, 'ohThumb');
+		$thumbUrl = getThumbSrc();
+		$permalink = get_permalink();
+		$title = the_title_attribute(null, null, false);
+		return "<a href='$permalink' title='$title' rel='bookmark' style='background: url(\"$thumbUrl\") no-repeat center center scroll;'>
+			$thumb
+		</a>";
+	}
+}
+
+function shouldUseThumbnail()
+{
+	return has_post_thumbnail() && !myIsSingular();
+}
+
+function getThumbSrc()
+{
+	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), array(400,400) );
+	return $thumb['0'];
+}
 
 # === FOR PLUGINS:
 
