@@ -69,8 +69,12 @@ return $count;
 
 # === FOR THEME:
 
+add_action( 'after_setup_theme', 'createImageSize' );
+function createImageSize() {
+	add_image_size( 'ohThumb', 400, 400 );
+}
+
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'ohThumb', 400, 400 );
 add_editor_style('sass.css'); // Add CSS to Visual Editor
 
 function new_excerpt_more( $more ) {
