@@ -57,6 +57,9 @@ if ( isCollege() && !isAcademy() ) {
 					<li class="academy<?php if (isAcademy() && !isCollege()) { echo ' current_page_item'; } ?>">
 						<a href="<?php echo academyHomeURL() ?>">Academy</a>
 					</li>
+					<li class="live">
+						<a href="#">Live</a>
+					</li>
 				</ul>
 				
 				<ul class="secondary-nav">

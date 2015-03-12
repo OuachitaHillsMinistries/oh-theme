@@ -163,6 +163,12 @@ body {
 .store .secondary-nav li li {
   background-color: grey; }
 
+.primary-nav li.live,
+.live .toggle-secondary-nav,
+.live .secondary-nav,
+.live .secondary-nav li li {
+  background-color: #a80000; }
+
 /* ===== Primary Navigation ===== */
 .primary-nav {
   padding: 0 10px;
