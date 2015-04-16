@@ -216,25 +216,25 @@ function regionalSecondaryNavArgs() {
 
 function getPostThumbnail() {
 	if (shouldUseThumbnail()) {
-		$thumb = get_the_post_thumbnail(null, 'ohThumb');
-		$thumbUrl = getThumbSrc();
+		$thumb = get_the_post_thumbnail();
 		$permalink = get_permalink();
-		$title = the_title_attribute(null, null, false);
-		return "<a href='$permalink' title='$title' rel='bookmark' style='background: url(\"$thumbUrl\") no-repeat center center scroll;'>
-			$thumb
-		</a>";
+		$title = getPostTitle();
+		return "<a href='$permalink' class='thumbnail' title='$title' rel='bookmark'>$thumb</a>";
 	}
+}
+
+function getPostTitle()
+{
+	$args = array(
+		'echo' => false
+	);
+	$title = the_title_attribute($args);
+	return $title;
 }
 
 function shouldUseThumbnail()
 {
 	return has_post_thumbnail() && !myIsSingular();
-}
-
-function getThumbSrc()
-{
-	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), array(400,400) );
-	return $thumb['0'];
 }
 
 # === FOR PLUGINS:
