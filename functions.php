@@ -216,11 +216,10 @@ function regionalSecondaryNavArgs() {
 
 function getPostThumbnail() {
 	if (shouldUseThumbnail()) {
-		$thumb = get_the_post_thumbnail(null, 'ohThumb');
-		$thumbUrl = getThumbSrc();
+		$thumb = get_the_post_thugimbnail(null, 'ohThumb');
 		$permalink = get_permalink();
 		$title = the_title_attribute(null, null, false);
-		return "<a href='$permalink' title='$title' rel='bookmark' style='background: url(\"$thumbUrl\") no-repeat center center scroll;'>
+		return "<a href='$permalink' title='$title' rel='bookmark'>
 			$thumb
 		</a>";
 	}
