@@ -216,13 +216,20 @@ function regionalSecondaryNavArgs() {
 
 function getPostThumbnail() {
 	if (shouldUseThumbnail()) {
-		$thumb = get_the_post_thugimbnail(null, 'ohThumb');
+		$thumb = get_the_post_thumbnail();
 		$permalink = get_permalink();
-		$title = the_title_attribute(null, null, false);
-		return "<a href='$permalink' title='$title' rel='bookmark'>
-			$thumb
-		</a>";
+		$title = getPostTitle();
+		return "<a href='$permalink' class='thumbnail' title='$title' rel='bookmark'>$thumb</a>";
 	}
+}
+
+function getPostTitle()
+{
+	$args = array(
+		'echo' => false
+	);
+	$title = the_title_attribute($args);
+	return $title;
 }
 
 function shouldUseThumbnail()

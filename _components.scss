@@ -122,37 +122,11 @@ $marginBreakPoint: 200;
 }
 
 @mixin imageLeftPlural() {
-  .plural {
-    position:relative;
-    overflow:hidden;
-  }
-  
-  .plural>a:first-child {
-    display: inline-block;
-    position: relative;
+  .plural .thumbnail {
+    width:33%;
+    height:33%;
     float:left;
-    margin:0 20px 0 0;
-    width: 33.3%;
-    top: 0;
-    left: 0;
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important;
-  }
-
-  .plural:nth-child(even)>a:first-child {
-    float:right;
-    margin:0 0 0 20px;
-  }
-
-  .plural>a:first-child:after {
-    content: '';
-    display: block;
-    margin-top: 75%;
-  }
-  
-  .plural>a:first-child img {
-    display:none;
+    overflow:hidden;
+    margin-right:20px;
   }
 }

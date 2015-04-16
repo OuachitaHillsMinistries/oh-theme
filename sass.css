@@ -645,87 +645,25 @@ article {
     .no-js .secondary-nav li li.page_item_has_children > a:hover:after {
       border-left: 7px solid black; } }
 @media all and (min-width: 1000px) {
-  .plural {
-    position: relative;
-    overflow: hidden; }
-
-  .plural > a:first-child {
-    display: inline-block;
-    position: relative;
+  .plural .thumbnail {
+    width: 33%;
+    height: 33%;
     float: left;
-    margin: 0 20px 0 0;
-    width: 33.3%;
-    top: 0;
-    left: 0;
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important; }
-
-  .plural:nth-child(even) > a:first-child {
-    float: right;
-    margin: 0 0 0 20px; }
-
-  .plural > a:first-child:after {
-    content: '';
-    display: block;
-    margin-top: 75%; }
-
-  .plural > a:first-child img {
-    display: none; } }
+    overflow: hidden;
+    margin-right: 20px; } }
 @media all and (min-width: 777.16667px) and (max-width: 1000px) {
-  .flexslider .plural {
-    position: relative;
-    overflow: hidden; }
-  .flexslider .plural > a:first-child {
-    display: inline-block;
-    position: relative;
+  .flexslider .plural .thumbnail {
+    width: 33%;
+    height: 33%;
     float: left;
-    margin: 0 20px 0 0;
-    width: 33.3%;
-    top: 0;
-    left: 0;
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important; }
-  .flexslider .plural:nth-child(even) > a:first-child {
-    float: right;
-    margin: 0 0 0 20px; }
-  .flexslider .plural > a:first-child:after {
-    content: '';
-    display: block;
-    margin-top: 75%; }
-  .flexslider .plural > a:first-child img {
-    display: none; } }
+    overflow: hidden;
+    margin-right: 20px; } }
 @media all and (min-width: 530px) and (max-width: 777.16667px) {
-  .plural {
-    position: relative;
-    overflow: hidden; }
-
-  .plural > a:first-child {
-    display: inline-block;
-    position: relative;
+  .plural .thumbnail {
+    width: 33%;
+    height: 33%;
     float: left;
-    margin: 0 20px 0 0;
-    width: 33.3%;
-    top: 0;
-    left: 0;
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important; }
-
-  .plural:nth-child(even) > a:first-child {
-    float: right;
-    margin: 0 0 0 20px; }
-
-  .plural > a:first-child:after {
-    content: '';
-    display: block;
-    margin-top: 75%; }
-
-  .plural > a:first-child img {
-    display: none; } }
+    overflow: hidden;
+    margin-right: 20px; } }
 
 /*# sourceMappingURL=sass.css.map */
