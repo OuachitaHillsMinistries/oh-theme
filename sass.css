@@ -646,24 +646,27 @@ article {
       border-left: 7px solid black; } }
 @media all and (min-width: 1000px) {
   .plural .thumbnail {
-    width: 33%;
-    height: 33%;
+    max-width: 33%;
+    max-height: 33%;
     float: left;
     overflow: hidden;
-    margin-right: 20px; } }
+    margin-right: 20px;
+    display: inline-block; } }
 @media all and (min-width: 777.16667px) and (max-width: 1000px) {
   .flexslider .plural .thumbnail {
-    width: 33%;
-    height: 33%;
+    max-width: 33%;
+    max-height: 33%;
     float: left;
     overflow: hidden;
-    margin-right: 20px; } }
+    margin-right: 20px;
+    display: inline-block; } }
 @media all and (min-width: 530px) and (max-width: 777.16667px) {
   .plural .thumbnail {
-    width: 33%;
-    height: 33%;
+    max-width: 33%;
+    max-height: 33%;
     float: left;
     overflow: hidden;
-    margin-right: 20px; } }
+    margin-right: 20px;
+    display: inline-block; } }
 
 /*# sourceMappingURL=sass.css.map */

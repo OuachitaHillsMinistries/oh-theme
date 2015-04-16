@@ -237,12 +237,6 @@ function shouldUseThumbnail()
 	return has_post_thumbnail() && !myIsSingular();
 }
 
-function getThumbSrc()
-{
-	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), array(400,400) );
-	return $thumb['0'];
-}
-
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
