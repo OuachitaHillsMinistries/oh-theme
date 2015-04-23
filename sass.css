@@ -415,7 +415,8 @@ body .flexslider-hg.flexslider ul.slides > li:first-child {
 
 /* ===== Entries ===== */
 article {
-  padding: 20px; }
+  padding: 20px;
+  clear: both; }
 
 .plural > a:first-child img {
   width: 100%;
