@@ -17,10 +17,10 @@ h2 {
 h3 {
   font-size: 30.66667px; }
 
-h4, .widget-title {
+h4 {
   font-size: 26.83333px; }
 
-h5 {
+h5, .widget-title {
   font-size: 23px; }
 
 h6 {
@@ -466,10 +466,6 @@ article {
   padding: 10px; }
   .widget-container li {
     margin-top: 10px; }
-
-.textwidget {
-  font-size: 13px;
-  line-height: 17px; }
 
 /* ===== Sidebar Calendar ===== */
 #wp-calendar, .gce-calendar {
