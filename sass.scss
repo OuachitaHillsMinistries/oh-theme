@@ -91,11 +91,18 @@
   background-color:$storeColor;
 }
 
+.primary-nav li.live,
+.live .toggle-secondary-nav,
+.live .secondary-nav,
+.live .secondary-nav li li {
+  background-color:$liveColor;
+}
+
 /* ===== Primary Navigation ===== */
 
 .primary-nav {
-	padding: 0 10px;
-	margin: 0;
+  padding: 0 10px;
+  margin: 0;
   z-index: 1000;
 	
 	li {
