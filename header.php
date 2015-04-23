@@ -58,13 +58,12 @@ if ( isCollege() && !isAcademy() ) {
 						<a href="<?php echo academyHomeURL() ?>">Academy</a>
 					</li>
 					<li class="live">
-						<a href="#">Live</a>
+						<a href="<?php echo get_option('streamingUrl'); ?>">Live</a>
 					</li>
 				</ul>
 				
 				<ul class="secondary-nav">
 					<?php wp_list_pages( regionalSecondaryNavArgs() ); ?>
-                    <li><a href="<?php echo get_option('streamingUrl'); ?>" target="_blank">Live</a></li>
 				</ul>
 			</nav>
 		</header>
