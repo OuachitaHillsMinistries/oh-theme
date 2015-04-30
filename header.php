@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/sass.css" />
 	<script src="<?php bloginfo('template_directory'); ?>/jquery-2.0.3.min.js"></script>
-	<script src="<?php bloginfo('template_directory'); ?>/javascript.js"></script>
+	<!--<script src="<?php bloginfo('template_directory'); ?>/javascript.js"></script>-->
 	<?php wp_head(); ?>
 </head>
 
@@ -61,10 +61,8 @@ if ( isCollege() && !isAcademy() ) {
 						<a href="<?php echo get_option('streamingUrl'); ?>">Live</a>
 					</li>
 				</ul>
-				
-				<ul class="secondary-nav">
-					<?php wp_list_pages( regionalSecondaryNavArgs() ); ?>
-				</ul>
+
+				<a href="#nav">Navigation</a>
 			</nav>
 		</header>
 		<?php if ( is_home() ) {
