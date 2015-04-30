@@ -62,7 +62,7 @@ if ( isCollege() && !isAcademy() ) {
 					</li>
 				</ul>
 
-				<a href="#nav">Navigation</a>
+				<a href="#sidebar">Nav</a>
 			</nav>
 		</header>
 		<?php if ( is_home() ) {

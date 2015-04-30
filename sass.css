@@ -196,7 +196,7 @@ body {
 .secondary-nav li ul {
   display: none; }
 
-.secondary-nav .current_page_item > ul, .secondary-nav .current_page_ancestor ul {
+.secondary-nav .current_page_item > ul, .secondary-nav .current_page_ancestor > ul {
   display: block; }
 
 .secondary-nav .current_page_item > a {
