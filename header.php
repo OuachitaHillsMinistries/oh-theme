@@ -6,9 +6,11 @@
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/sass.css" />
-	<script src="<?php bloginfo('template_directory'); ?>/jquery-2.0.3.min.js"></script>
-	<!--<script src="<?php bloginfo('template_directory'); ?>/javascript.js"></script>-->
-	<?php wp_head(); ?>
+	<?php
+	wp_register_script( 'ohThemeJs', get_bloginfo('template_directory').'/javascript.js', array('jquery'));
+	wp_enqueue_script( 'ohThemeJs' );
+	wp_head();
+	?>
 </head>
 
 <?php
