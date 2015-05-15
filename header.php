@@ -21,6 +21,7 @@ if ( isCollege() && !isAcademy() ) {
 ?>
 
 <body <?php body_class($extraBodyClasses); ?>>
+	<div class="gradient"></div>
 	<div id="wrapper" class="hfeed">
 		<header class="main-header" role="banner">
 			<section class="branding">
