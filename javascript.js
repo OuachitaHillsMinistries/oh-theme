@@ -39,7 +39,6 @@ jQuery(document).ready(function() {
 	}
 
 	function setupMobileNavToggling() {
-		jQuery('.mobile-nav').hide();
 		jQuery('.nav-jump').click(function (e) {
 			e.preventDefault();
 			jQuery('.mobile-nav').slideToggle();
