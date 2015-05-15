@@ -14,14 +14,22 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery('#s').value = 'Search';
-	jQuery('#s').focus(function() {
+
+	var searchBoxes = jQuery("input[name='s']");
+	searchBoxes.each(function() {
+		if (this.value == '') {
+			this.value = 'Search';
+		} else if (this.value != 'Search') {
+			jQuery(this).css('color','black');
+		}
+	});
+	searchBoxes.focus(function() {
 		if (this.value == 'Search') {
 			this.value = '';
 			jQuery(this).css('color','black');
 		}
 	});
-	jQuery('#s').blur(function() {
+	searchBoxes.blur(function() {
 		if (this.value == '') {
 			this.value = 'Search';
 			jQuery(this).css('color','grey');
