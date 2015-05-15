@@ -339,7 +339,8 @@ article {
 .plural > a:first-child img {
   width: 100%;
   display: block;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  border-radius: 4px; }
 
 .plural > a:first-child {
   margin-bottom: 20px;
