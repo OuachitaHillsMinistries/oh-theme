@@ -197,16 +197,17 @@ body {
 
 /* ===== Navigation ===== */
 #sidebar > h3 {
-  margin: 10px; }
+  margin: 10px;
+  color: #242424; }
 
-#nav, #nav > ul {
+.nav, .nav > ul {
   margin-top: 0;
   padding-left: 3px; }
 
-#nav ul {
+.nav ul {
   padding-left: 20px; }
 
-#nav li {
+.nav li {
   position: relative;
   list-style: none;
   width: 100%;
@@ -214,17 +215,17 @@ body {
   padding-left: 7px;
   padding-left: 7px; }
 
-#nav a {
+.nav a {
   padding: 3px 0;
   display: inline-block; }
 
-#nav li ul {
+.nav li ul {
   display: none; }
 
-#nav .current_page_item > ul, #nav .current_page_ancestor > ul {
+.nav .current_page_item > ul, .nav .current_page_ancestor > ul {
   display: block; }
 
-#nav .current_page_item > a {
+.nav .current_page_item > a {
   font-weight: bold; }
 
 .toggle {
@@ -488,13 +489,6 @@ article {
 
   .main-header {
     border-top: none; }
-
-  .primary-nav {
-    position: absolute;
-    right: 0;
-    top: -27px;
-    height: 27px;
-    overflow: hidden; }
 
   .page-template-page-template-no-sidebar-php .container {
     border-right: 0; }

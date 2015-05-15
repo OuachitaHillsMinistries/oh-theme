@@ -222,6 +222,25 @@ function registerScripts()
 	wp_head();
 }
 
+function navigation() {
+	$searchForm = get_search_form(false);
+	$pages = wp_list_pages(array(
+		'title_li'=>null,
+		'echo'=>false
+	));
+
+	$homeLinkClasses = (is_home() || is_front_page()) ? 'home current_page_item' : 'home';
+	$homeLinkUrl = home_url();
+	$homeLink = "<li class='$homeLinkClasses'><a href='$homeLinkUrl'>Home</a></li>";
+
+	$liveUrl = get_option('streamingUrl');
+	$liveLink = "<li class='live'><a href='$liveUrl'>Live</a></li>";
+
+	$menu = "<ul class='nav'>$homeLink$liveLink$pages</ul>";
+
+	echo "<div class='navigation'>$searchForm$menu</div>";
+}
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )

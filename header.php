@@ -33,6 +33,9 @@ if ( isCollege() && !isAcademy() ) {
 			</section>
 			<a href="#sidebar" class="nav-jump"><span>Nav</span></a>
 		</header>
+		<div class="mobile-nav">
+			<?php navigation(); ?>
+		</div>
 		<?php if ( is_home() ) {
 			echo do_shortcode('[flexslider slug=homepage]');
 		} elseif ( $post->post_title == "Academy" ) {
