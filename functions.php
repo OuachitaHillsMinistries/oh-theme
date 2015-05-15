@@ -217,7 +217,7 @@ function registerStylesheets()
 
 function registerScripts()
 {
-	wp_register_script('ohThemeJs', get_bloginfo('template_directory') . '/javascript.js', array('jquery', 'jquery-ui-core'));
+	wp_register_script('ohThemeJs', get_bloginfo('template_directory') . '/javascript.js', array('jquery'));
 	wp_enqueue_script('ohThemeJs');
 	wp_head();
 }

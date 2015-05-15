@@ -1,4 +1,6 @@
 <aside id="sidebar" role="complementary">
+    <?php get_search_form( true ); ?>
+
     <h3>Navigation</h3>
     <ul class="secondary-nav" id="nav">
         <li class="home<?php if (is_home() || is_front_page()) { echo ' current_page_item'; } ?>">
@@ -12,7 +14,7 @@
         )); ?>
     </ul>
 
-    <?php get_search_form( true ); ?>
+
 
     <?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
     <div id="primary" class="widget-area">
