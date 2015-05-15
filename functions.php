@@ -241,6 +241,53 @@ function navigation() {
 	echo "<div class='navigation'>$searchForm$menu</div>";
 }
 
+function slider() {
+
+	if ( is_home() ) {
+		echo do_shortcode('[flexslider slug=homepage]');
+	} elseif (isAcademyHome()) {
+		echo do_shortcode('[flexslider slug=academy]');
+	} elseif (isCollegeHome()) {
+		echo do_shortcode('[flexslider slug=college]');
+	}
+}
+
+function isAcademyHome()
+{
+	$post = get_post();
+	return $post->post_title == "Academy";
+}
+
+function isCollegeHome()
+{
+	$post = get_post();
+	return $post->post_title == "College";
+}
+
+function bodyClasses() {
+	$classes = 'no-js';
+
+	if ( isCollege() && !isAcademy() ) {
+		$classes .= ' college';
+	} elseif ( isAcademy() && !isCollege() ) {
+		$classes .= ' academy';
+	}
+
+	if (isAcademyHome()) {
+		$classes .= ' academyHome';
+	}
+
+	if (isCollegeHome()) {
+		$classes .= ' collegeHome';
+	}
+
+	if (is_home()) {
+		$classes .= ' home';
+	}
+
+	return body_class($classes);
+}
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )

@@ -10,18 +10,7 @@
 	?>
 </head>
 
-<?php
-if ( isCollege() && !isAcademy() ) {
-	$extraBodyClasses = 'college no-js';
-} elseif ( isAcademy() && !isCollege() ) {
-	$extraBodyClasses = 'academy no-js';
-} else {
-	$extraBodyClasses = 'home no-js';
-}
-?>
-
-<body <?php body_class($extraBodyClasses); ?>>
-	<div class="gradient"></div>
+<body <?php bodyClasses() ?>>
 	<div id="wrapper" class="hfeed">
 		<header class="main-header" role="banner">
 			<section class="branding">
@@ -37,11 +26,7 @@ if ( isCollege() && !isAcademy() ) {
 		<div class="mobile-nav">
 			<?php navigation(); ?>
 		</div>
-		<?php if ( is_home() ) {
-			echo do_shortcode('[flexslider slug=homepage]');
-		} elseif ( $post->post_title == "Academy" ) {
-			echo do_shortcode('[flexslider slug=academy]');
-		} elseif ( $post->post_title == "College" ) {
-			echo do_shortcode('[flexslider slug=college]');
-		} ?>
+		<?php slider() ?>
+		<h3 class="college">College</h3>
+		<h3 class="academy">Academy</h3>
 		<div class="container">

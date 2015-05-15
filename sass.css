@@ -20,7 +20,7 @@ h3 {
 h4 {
   font-size: 26.83333px; }
 
-h5, #sidebar h3 {
+h5, #sidebar h3, #wrapper > h3 {
   font-size: 23px; }
 
 h6 {
@@ -52,7 +52,7 @@ body {
   font-size: 15.33333px;
   height: 100%;
   line-height: normal;
-  background-color: #EFEFEF; }
+  background-color: #e6e6e6; }
 
 #wrapper {
   margin: 0 auto; }
@@ -61,12 +61,6 @@ body {
   color: white;
   width: 100%;
   position: relative; }
-
-@media all and (min-width: 778.16667px) {
-  .container {
-    border-left: 203.16667px solid #F5F5F5;
-    border-radius: 4px;
-    background-color: white; } }
 
 #content {
   height: 100%;
@@ -118,7 +112,7 @@ body {
 
 .branding img {
   width: 100%;
-  max-width: 350px;
+  max-width: 330px;
   padding: 15.33333px; }
 
 .site-title {
@@ -288,6 +282,27 @@ body .flexslider-hg.flexslider ul.slides > li:first-child {
 .flexslider:hover .flex-control-nav,
 .flexslider:hover .flex-direction-nav {
   opacity: 1; }
+
+.flexslider-hg-corners-rounded {
+  border-radius: 0 !important; }
+
+/* ===== Location Indicators =====*/
+h3.college, h3.academy {
+  display: none; }
+
+.college h3.college, .academy h3.academy {
+  display: block; }
+
+h3.college, h3.academy {
+  color: white;
+  margin: 0;
+  padding: 5px 20px; }
+
+h3.college {
+  background-color: #6AAC24; }
+
+h3.academy {
+  background-color: #4C8A9D; }
 
 /* ===== Content ===== */
 #content > header > h1 {
@@ -488,56 +503,24 @@ article {
 
 /* ===== Media Queries ===== */
 @media all and (min-width: 778.16667px) {
-  body.college {
-    background-color: #6AAC24; }
+  .flexslider-hg-corners-rounded {
+    border-radius: 4px 4px 0 0 !important; }
 
-  body.academy {
-    background-color: #4C8A9D; }
+  .container {
+    border-left: 203.16667px solid #F5F5F5;
+    background-color: white; }
 
-  .gradient {
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -5; }
+  .container {
+    border-radius: 4px; }
 
-  .college .gradient {
-    background: #efefef;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #efefef 0%, #efefef 25%, #6aac24 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(25%, #efefef), color-stop(100%, #6aac24));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #efefef 0%, #efefef 25%, #6aac24 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #efefef 0%, #efefef 25%, #6aac24 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #efefef 0%, #efefef 25%, #6aac24 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #efefef 0%, #efefef 25%, #6aac24 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#6aac24',GradientType=0 );
-    /* IE6-9 */ }
+  .home .container, .academyHome .container, .collegeHome .container, .college .container, .academy .container {
+    border-radius: 0 0 4px 4px; }
 
-  .academy .gradient {
-    background: #efefef;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #efefef 0%, #efefef 25%, #4c8a9d 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(25%, #efefef), color-stop(100%, #4c8a9d));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #efefef 0%, #efefef 25%, #4c8a9d 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #efefef 0%, #efefef 25%, #4c8a9d 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #efefef 0%, #efefef 25%, #4c8a9d 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #efefef 0%, #efefef 25%, #4c8a9d 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#4c8a9d',GradientType=0 );
-    /* IE6-9 */ }
+  .college h3.college, .academy h3.academy {
+    border-radius: 4px 4px 0 0; }
+
+  .collegeHome h3.college, .academyHome h3.academy {
+    border-radius: 0; }
 
   #wrapper {
     width: 80%; }
