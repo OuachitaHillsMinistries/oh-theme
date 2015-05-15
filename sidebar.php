@@ -2,7 +2,7 @@
     <?php get_search_form( true ); ?>
 
     <h3>Navigation</h3>
-    <ul class="secondary-nav" id="nav">
+    <ul id="nav">
         <li class="home<?php if (is_home() || is_front_page()) { echo ' current_page_item'; } ?>">
             <a href="<?php echo home_url() ?>">Home</a>
         </li>

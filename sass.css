@@ -195,51 +195,36 @@ body {
 .screen-reader-text {
   display: none; }
 
-/* ===== Navigation Colors ===== */
-.primary-nav li.home {
-  background-color: black; }
-
-.primary-nav li.college {
-  background-color: #005C30; }
-
-.primary-nav li.academy {
-  background-color: #387798; }
-
-.primary-nav li.store {
-  background-color: grey; }
-
-.primary-nav li.live {
-  background-color: #a80000; }
-
-/* ===== Secondary Navigation ===== */
+/* ===== Navigation ===== */
 #sidebar > h3 {
   margin: 10px; }
 
-.secondary-nav, .secondary-nav > ul {
+#nav, #nav > ul {
   margin-top: 0;
-  padding-left: 10px; }
+  padding-left: 3px; }
 
-.secondary-nav ul {
+#nav ul {
   padding-left: 20px; }
 
-.secondary-nav li {
+#nav li {
   position: relative;
   list-style: none;
-  width: 100%; }
+  width: 100%;
+  border-top: 1px solid lightgrey;
+  padding-left: 7px; }
 
-.secondary-nav a {
-  padding-bottom: 5px;
+#nav a {
+  padding: 3px 0;
   display: inline-block; }
 
-.secondary-nav li ul {
+#nav li ul {
   display: none; }
 
-.secondary-nav .current_page_item > ul, .secondary-nav .current_page_ancestor > ul {
+#nav .current_page_item > ul, #nav .current_page_ancestor > ul {
   display: block; }
 
-.secondary-nav .current_page_item > a {
-  font-weight: bold;
-  color: #005C30; }
+#nav .current_page_item > a {
+  font-weight: bold; }
 
 .toggle {
   position: absolute;
