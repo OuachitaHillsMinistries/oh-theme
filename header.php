@@ -23,16 +23,6 @@ if ( isCollege() && !isAcademy() ) {
 }
 ?>
 
-<!--
-<?php
-	echo " | isCollege(): " . isCollege();
-	echo " | isAcademy(): " . isAcademy();
-	echo " | topParent()->post_title: " . topParent()->post_title;
-	echo " | in_category('Academy'): " . in_category('Academy');
-	echo " | is_category('Academy'): " . is_category('Academy');
-?>
--->
-
 <body <?php body_class($extraBodyClasses); ?>>
 	<div id="wrapper" class="hfeed">
 		<header class="main-header" role="banner">
@@ -44,28 +34,7 @@ if ( isCollege() && !isAcademy() ) {
 				</div>
 				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 			</section>
-			<!--<div class="search">
-				<?php get_search_form(); ?>
-			</div>-->
-			<nav class="navigation" role="navigation">
-				
-				<ul class="primary-nav">
-					<li class="home<?php if (is_home() || is_front_page()) { echo ' current_page_item'; } ?>">
-						<a href="<?php echo home_url() ?>">Home</a>
-					</li>
-					<li class="college<?php if (isCollege() && !isAcademy()) { echo ' current_page_item'; } ?>">
-						<a href="<?php echo collegeHomeURL() ?>">College</a>
-					</li>
-					<li class="academy<?php if (isAcademy() && !isCollege()) { echo ' current_page_item'; } ?>">
-						<a href="<?php echo academyHomeURL() ?>">Academy</a>
-					</li>
-					<li class="live">
-						<a href="<?php echo get_option('streamingUrl'); ?>">Live</a>
-					</li>
-				</ul>
-
-				<a href="#sidebar">Nav</a>
-			</nav>
+			<a href="#sidebar" class="nav-jump"><span>Nav</span></a>
 		</header>
 		<?php if ( is_home() ) {
 			echo do_shortcode('[flexslider slug=homepage]');

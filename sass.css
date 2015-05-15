@@ -105,9 +105,14 @@ body {
   float: right; }
 
 /* ===== Header ===== */
+.main-header {
+  overflow: hidden; }
+
 .branding {
   padding-top: 1px;
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+  float: left;
+  border-right: 47px solid transparent; }
 
 .replace {
   display: none; }
@@ -123,8 +128,42 @@ body {
 .site-description {
   display: none; }
 
-.navigation {
-  position: relative; }
+.nav-jump {
+  float: right;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 25px;
+  width: 27px; }
+
+.nav-jump:hover {
+  text-decoration: none; }
+
+.nav-jump span {
+  display: block;
+  position: relative;
+  background-color: black;
+  color: transparent;
+  height: 5px;
+  border-radius: 2px;
+  margin-top: 10px; }
+
+.nav-jump span:before, .nav-jump span:after {
+  position: absolute;
+  content: '';
+  background-color: black;
+  left: 0;
+  right: 0;
+  border-radius: 2px; }
+
+.nav-jump span:before {
+  top: -10px;
+  bottom: 10px; }
+
+.nav-jump span:after {
+  top: 10px;
+  bottom: -10px; }
 
 /* ===== Search ===== */
 .toggle-search {
@@ -153,33 +192,6 @@ body {
 
 .primary-nav li.live {
   background-color: #a80000; }
-
-/* ===== Primary Navigation ===== */
-.primary-nav {
-  padding: 0 10px;
-  margin: 0;
-  z-index: 1000; }
-  .primary-nav li {
-    display: inline-block;
-    padding: 5px 7px;
-    border-radius: 4px 4px 0 0; }
-  .primary-nav a {
-    color: white;
-    position: relative;
-    z-index: 2000; }
-  .primary-nav:before {
-    background-color: rgba(255, 255, 255, 0.15);
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-
-.navigation > a {
-  position: absolute;
-  right: 15px;
-  top: 5px; }
 
 /* ===== Secondary Navigation ===== */
 #sidebar > h3 {
@@ -480,7 +492,7 @@ article {
     clear: both;
     padding: 10px 0; }
 
-  .navigation > a {
+  .nav-jump {
     display: none; } }
 @media all and (min-width: 1000px) {
   .plural .thumbnail {

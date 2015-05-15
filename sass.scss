@@ -18,9 +18,15 @@
 
 /* ===== Header ===== */
 
+.main-header {
+  overflow:hidden;
+}
+
 .branding {
 	padding-top: 1px;
 	margin-bottom: 4px;
+  float:left;
+	border-right:47px solid rgba(0, 0, 0, 0);
 }
 
 .replace {
@@ -41,8 +47,47 @@
 	display:none;
 }
 
-.navigation {
+.nav-jump {
+  float:right;
+  display:block;
+  position:absolute;
+  top:10px;
+  right:10px;
+  height:25px;
+  width:27px;
+}
+
+.nav-jump:hover {
+  text-decoration:none;
+}
+
+.nav-jump span {
+  display:block;
   position:relative;
+  background-color:black;
+  color:rgba(0, 0, 0, 0);
+  height:5px;
+  border-radius:2px;
+  margin-top:10px;
+}
+
+.nav-jump span:before, .nav-jump span:after {
+  position:absolute;
+  content:'';
+  background-color:black;
+  left:0;
+  right:0;
+  border-radius:2px;
+}
+
+.nav-jump span:before {
+  top:-10px;
+  bottom:10px;
+}
+
+.nav-jump span:after {
+  top:10px;
+  bottom:-10px;
 }
 
 /* ===== Search ===== */
@@ -81,42 +126,6 @@
 
 .primary-nav li.live {
   background-color:$liveColor;
-}
-
-/* ===== Primary Navigation ===== */
-
-.primary-nav {
-  padding: 0 10px;
-  margin: 0;
-  z-index: 1000;
-	
-	li {
-	  display:inline-block;
-    padding:5px 7px;
-    border-radius: 4px 4px 0 0;
-	}
-	
-	a {
-	  color:white;
-      position:relative;
-      z-index: 2000;
-	}
-
-  &:before {
-    background-color:rgba(255, 255, 255, .15);
-    content: "";
-    position: absolute;
-    top: 0;
-    left:0;
-    right:0;
-    bottom:0;
-  }
-}
-
-.navigation>a {
-  position:absolute;
-  right:15px;
-  top:5px;
 }
 
 /* ===== Secondary Navigation ===== */
@@ -490,7 +499,7 @@ article {
 		padding:10px 0;
 	}
 
-  .navigation>a {
+  .nav-jump {
 	display:none;
   }
 }
