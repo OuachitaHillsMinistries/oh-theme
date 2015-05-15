@@ -18,9 +18,15 @@
 
 /* ===== Header ===== */
 
+.main-header {
+  overflow:hidden;
+}
+
 .branding {
 	padding-top: 1px;
 	margin-bottom: 4px;
+  float:left;
+	border-right:47px solid rgba(0, 0, 0, 0);
 }
 
 .replace {
@@ -41,8 +47,47 @@
 	display:none;
 }
 
-.navigation {
+.nav-jump {
+  float:right;
+  display:block;
+  position:absolute;
+  top:10px;
+  right:10px;
+  height:25px;
+  width:27px;
+}
+
+.nav-jump:hover {
+  text-decoration:none;
+}
+
+.nav-jump span {
+  display:block;
   position:relative;
+  background-color:black;
+  color:rgba(0, 0, 0, 0);
+  height:5px;
+  border-radius:2px;
+  margin-top:10px;
+}
+
+.nav-jump span:before, .nav-jump span:after {
+  position:absolute;
+  content:'';
+  background-color:black;
+  left:0;
+  right:0;
+  border-radius:2px;
+}
+
+.nav-jump span:before {
+  top:-10px;
+  bottom:10px;
+}
+
+.nav-jump span:after {
+  top:10px;
+  bottom:-10px;
 }
 
 /* ===== Search ===== */
@@ -63,155 +108,73 @@
 
 /* ===== Navigation Colors ===== */
 
-.primary-nav li.home,
-.home .toggle-secondary-nav,
-.home .secondary-nav,
-.home .secondary-nav li li {
+.primary-nav li.home {
 	background-color:$homeColor;
 }
 
-.primary-nav li.college,
-.college .toggle-secondary-nav,
-.college .secondary-nav,
-.college .secondary-nav li li {
+.primary-nav li.college {
 	background-color:$collegeGreen;
 }
 
-.primary-nav li.academy,
-.academy .toggle-secondary-nav,
-.academy .secondary-nav,
-.academy .secondary-nav li li {
+.primary-nav li.academy {
 	background-color:$academyBlue;
 }
 
-.primary-nav li.store,
-.store .toggle-secondary-nav,
-.store .secondary-nav,
-.store .secondary-nav li li {
+.primary-nav li.store {
   background-color:$storeColor;
 }
 
-.primary-nav li.live,
-.live .toggle-secondary-nav,
-.live .secondary-nav,
-.live .secondary-nav li li {
+.primary-nav li.live {
   background-color:$liveColor;
 }
 
-/* ===== Primary Navigation ===== */
+/* ===== Secondary Navigation ===== */
 
-.primary-nav {
-  padding: 0 10px;
-  margin: 0;
-  z-index: 1000;
-	
-	li {
-	  display:inline-block;
-    padding:5px 7px;
-    border-radius: 4px 4px 0 0;
-	}
-	
-	a {
-	  color:white;
-      position:relative;
-      z-index: 2000;
-	}
-
-  &:before {
-    background-color:rgba(255, 255, 255, .15);
-    content: "";
-    position: absolute;
-    top: 0;
-    left:0;
-    right:0;
-    bottom:0;
-  }
+#sidebar>h3 {
+  margin:10px;
 }
 
-/* ===== Mobile Secondary Navigation ===== */
-
-.toggle-secondary-nav {
-	display:block;
-	padding:10px;
-	color:white;
+.secondary-nav, .secondary-nav>ul {
+  margin-top:0;
+  padding-left:10px;
 }
 
-.secondary-nav {
-  margin:0;
-  background: linear-gradient(rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
-  
-  li {
-    padding-left:40px;
-	}
-	
-	.toggle {
-	  padding-left:0;
-	}
-	
-	a {
-	  display:block;
-    padding:10px;
-    color:white;
-	}
-	
-	&, ul {
-	  padding: 0;
-    list-style-type: none;
-	}
+.secondary-nav ul {
+  padding-left:20px;
 }
 
-.secondary-nav:before {
-  border-top: 1px solid rgba(255, 255, 255, .2);
-  border-bottom:1px solid rgba(0, 0, 0, .2);
-  content: "";
-  position: absolute;
-  top: 0;
-  left:0;
+.secondary-nav li {
+  position:relative;
+  list-style:none;
+  width:100%;
+}
+
+.secondary-nav a {
+  padding-bottom:5px;
+  display:inline-block;
+}
+
+.secondary-nav li ul {
+  display:none;
+}
+
+.secondary-nav .current_page_item>ul, .secondary-nav .current_page_ancestor>ul {
+  display:block;
+}
+
+.secondary-nav .current_page_item>a {
+  font-weight:bold;
+  color:$collegeGreen;
+}
+
+.toggle {
+  position:absolute;
   right:0;
-  bottom:0;
-}
-
-.toggle-secondary-nav:hover,
-.secondary-nav li a:hover,
-.secondary-nav li.current_page_item>a {
-	background-color:#EFEFEF;
-	color:black;
-	text-decoration:none;
-}
-
-.toggle-secondary-nav {
-	position:relative;
-}
-
-.toggle-secondary-nav:after {
-    content:"";
-    width:0;
-    height:0;
-    border-left:4px solid transparent;
-    border-right:4px solid transparent;
-    border-top:7px solid white;
-    position:absolute;
-    top:15px;
-    left:110px;
-}
-
-.toggle-secondary-nav:hover:after {
-    border-top:7px solid black;
-}
-
-.toggle-secondary-nav.up:after {
-	border-top:none;
-	border-bottom:7px solid white;
-}
-
-.toggle-secondary-nav.up:hover:after {
-	border-bottom:7px solid black;
-}
-
-/* ===== Horizontal Secondary Navigation ===== */
-
-.horizontal .secondary-nav {
-	@include horizontalSecondaryNavigation();
+  top:-1px;
+  font-weight:bold;
+  display:inline-block;
+  width:20px;
+  text-align:center;
 }
 
 /* ===== Slider ===== */
@@ -385,6 +348,10 @@ article {
 
 /* ===== Sidebar ===== */
 
+#sidebar h3 {
+  margin-bottom:10px;
+}
+
 .widget-title  {
 	margin-bottom: 5px;
 }
@@ -519,11 +486,8 @@ article {
 		position: absolute;
 		right: 0;
 		top: -27px;
-	}
-	
-	.secondary-nav,
-	.toggle-secondary-nav {
-		border-radius: 4px 4px 0 0;
+	  height:27px;
+	  overflow:hidden;
 	}
 	
 	.page-template-page-template-no-sidebar-php .container {
@@ -534,12 +498,10 @@ article {
 		clear:both;
 		padding:10px 0;
 	}
-	
-	/* ===== Regressive Horizontal Secondary Navigation ===== */
-	
-	.no-js .secondary-nav {
-	  @include horizontalSecondaryNavigation();
-	}
+
+  .nav-jump {
+	display:none;
+  }
 }
 
 @media all and (min-width: 1000px) {
