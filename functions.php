@@ -184,36 +184,6 @@ function myIsSingular() {
 	return is_singular() && !is_page_template('page-template-category.php');
 }
 
-function secondaryNavArgs($parentID) {
-	return array(
-		'authors'      => '',
-		'child_of'     => $parentID,
-		'date_format'  => get_option('date_format'),
-		'depth'        => 0,
-		'echo'         => 1,
-		'exclude'      => '',
-		'include'      => '',
-		'link_after'   => '',
-		'link_before'  => '',
-		'post_type'    => 'page',
-		'post_status'  => 'publish',
-		'show_date'    => '',
-		'sort_column'  => 'menu_order',
-		'title_li'     => '', 
-		'walker'       => ''
-	);
-}
-
-function regionalSecondaryNavArgs() {
-	if ( isCollege() && !isAcademy() ) {
-		return secondaryNavArgs( collegeHomeID() );
-	} elseif ( isAcademy() && !isCollege() ) {
-		return secondaryNavArgs( academyHomeID() );
-	} else {
-		return secondaryNavArgs( 0 );
-	}
-}
-
 function getPostThumbnail() {
 	if (shouldUseThumbnail()) {
 		$thumb = get_the_post_thumbnail();
@@ -235,6 +205,21 @@ function getPostTitle()
 function shouldUseThumbnail()
 {
 	return has_post_thumbnail() && !myIsSingular();
+}
+
+function registerStylesheets()
+{
+	wp_register_style('ohThemeStyle', get_stylesheet_uri());
+	wp_register_style('ohThemeSass', get_bloginfo('template_directory') . "/sass.css");
+	wp_enqueue_style('ohThemeStyle');
+	wp_enqueue_style('ohThemeSass');
+}
+
+function registerScripts()
+{
+	wp_register_script('ohThemeJs', get_bloginfo('template_directory') . '/javascript.js', array('jquery', 'jquery-ui-core'));
+	wp_enqueue_script('ohThemeJs');
+	wp_head();
 }
 
 # === FOR PLUGINS:
