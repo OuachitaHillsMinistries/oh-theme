@@ -23,8 +23,6 @@
 }
 
 .branding {
-	padding-top: 1px;
-	margin-bottom: 4px;
   float:left;
 	border-right:47px solid rgba(0, 0, 0, 0);
 }
@@ -51,10 +49,11 @@
   float:right;
   display:block;
   position:absolute;
-  top:10px;
+  top:50%;
+  margin-top:-13px;
   right:10px;
-  height:25px;
-  width:27px;
+  height:26px;
+  width:20px;
 }
 
 .nav-jump:hover {
@@ -66,9 +65,10 @@
   position:relative;
   background-color:black;
   color:rgba(0, 0, 0, 0);
-  height:5px;
+  height:3px;
   border-radius:2px;
   margin-top:10px;
+  opacity:.7;
 }
 
 .nav-jump span:before, .nav-jump span:after {
@@ -145,6 +145,7 @@
   list-style:none;
   width:100%;
   border-top:1px solid lightgrey;
+  padding-left:7px;
   padding-left:7px;
 }
 
