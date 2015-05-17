@@ -184,36 +184,6 @@ function myIsSingular() {
 	return is_singular() && !is_page_template('page-template-category.php');
 }
 
-function secondaryNavArgs($parentID) {
-	return array(
-		'authors'      => '',
-		'child_of'     => $parentID,
-		'date_format'  => get_option('date_format'),
-		'depth'        => 0,
-		'echo'         => 1,
-		'exclude'      => '',
-		'include'      => '',
-		'link_after'   => '',
-		'link_before'  => '',
-		'post_type'    => 'page',
-		'post_status'  => 'publish',
-		'show_date'    => '',
-		'sort_column'  => 'menu_order',
-		'title_li'     => '', 
-		'walker'       => ''
-	);
-}
-
-function regionalSecondaryNavArgs() {
-	if ( isCollege() && !isAcademy() ) {
-		return secondaryNavArgs( collegeHomeID() );
-	} elseif ( isAcademy() && !isCollege() ) {
-		return secondaryNavArgs( academyHomeID() );
-	} else {
-		return secondaryNavArgs( 0 );
-	}
-}
-
 function getPostThumbnail() {
 	if (shouldUseThumbnail()) {
 		$thumb = get_the_post_thumbnail();
@@ -235,6 +205,87 @@ function getPostTitle()
 function shouldUseThumbnail()
 {
 	return has_post_thumbnail() && !myIsSingular();
+}
+
+function registerStylesheets()
+{
+	wp_register_style('ohThemeStyle', get_stylesheet_uri());
+	wp_register_style('ohThemeSass', get_bloginfo('template_directory') . "/sass.css");
+	wp_enqueue_style('ohThemeStyle');
+	wp_enqueue_style('ohThemeSass');
+}
+
+function registerScripts()
+{
+	wp_register_script('ohThemeJs', get_bloginfo('template_directory') . '/javascript.js', array('jquery'));
+	wp_enqueue_script('ohThemeJs');
+	wp_head();
+}
+
+function navigation() {
+	$searchForm = get_search_form(false);
+	$pages = wp_list_pages(array(
+		'title_li'=>null,
+		'echo'=>false
+	));
+
+	$homeLinkClasses = (is_home() || is_front_page()) ? 'home current_page_item' : 'home';
+	$homeLinkUrl = home_url();
+	$homeLink = "<li class='$homeLinkClasses'><a href='$homeLinkUrl'>Home</a></li>";
+
+	$liveUrl = get_option('streamingUrl');
+	$liveLink = "<li class='live'><a href='$liveUrl'>Live</a></li>";
+
+	$menu = "<ul class='nav'>$homeLink$liveLink$pages</ul>";
+
+	echo "<div class='navigation'>$searchForm$menu</div>";
+}
+
+function slider() {
+
+	if ( is_home() ) {
+		echo do_shortcode('[flexslider slug=homepage]');
+	} elseif (isAcademyHome()) {
+		echo do_shortcode('[flexslider slug=academy]');
+	} elseif (isCollegeHome()) {
+		echo do_shortcode('[flexslider slug=college]');
+	}
+}
+
+function isAcademyHome()
+{
+	$post = get_post();
+	return $post->post_title == "Academy";
+}
+
+function isCollegeHome()
+{
+	$post = get_post();
+	return $post->post_title == "College";
+}
+
+function bodyClasses() {
+	$classes = 'no-js';
+
+	if ( isCollege() && !isAcademy() ) {
+		$classes .= ' college';
+	} elseif ( isAcademy() && !isCollege() ) {
+		$classes .= ' academy';
+	}
+
+	if (isAcademyHome()) {
+		$classes .= ' academyHome';
+	}
+
+	if (isCollegeHome()) {
+		$classes .= ' collegeHome';
+	}
+
+	if (is_home()) {
+		$classes .= ' home';
+	}
+
+	return body_class($classes);
 }
 
 # === FOR PLUGINS:

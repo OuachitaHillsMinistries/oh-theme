@@ -23,8 +23,6 @@
 }
 
 .branding {
-	padding-top: 1px;
-	margin-bottom: 4px;
   float:left;
 	border-right:47px solid rgba(0, 0, 0, 0);
 }
@@ -35,7 +33,7 @@
 
 .branding img {
 	width:100%;
-	max-width:350px;
+	max-width:330px;
 	padding: ohSizeStep(1);
 }
 
@@ -51,10 +49,11 @@
   float:right;
   display:block;
   position:absolute;
-  top:10px;
+  top:50%;
+  margin-top:-13px;
   right:10px;
-  height:25px;
-  width:27px;
+  height:26px;
+  width:20px;
 }
 
 .nav-jump:hover {
@@ -66,9 +65,10 @@
   position:relative;
   background-color:black;
   color:rgba(0, 0, 0, 0);
-  height:5px;
+  height:3px;
   border-radius:2px;
   margin-top:10px;
+  opacity:.7;
 }
 
 .nav-jump span:before, .nav-jump span:after {
@@ -92,79 +92,83 @@
 
 /* ===== Search ===== */
 
-.toggle-search {
-	position:absolute;
-	right:4px;
-	bottom:2px;
+.searchform {
+	padding-right:30px;
+  padding-left:8px;
+  position:relative;
+  margin-bottom:20px;
 }
 
-.search {
-	clear:both;
+#s {
+  width:100%;
+  height:29px;
+  padding-left:5px;
+  color:grey;
+}
+
+#searchsubmit {
+	background-image:url('img/search.png');
+  background-color:transparent;
+  background-size:contain;
+  border:none;
+  width:21px;
+  height:21px;
+  color:rgba(0, 0, 0, 0);
+  position:absolute;
+  top:3px;
+  right:0;
+  cursor:pointer;
+  padding:4px;
 }
 
 .screen-reader-text {
 	display:none;
 }
 
-/* ===== Navigation Colors ===== */
+/* ===== Navigation ===== */
 
-.primary-nav li.home {
-	background-color:$homeColor;
-}
-
-.primary-nav li.college {
-	background-color:$collegeGreen;
-}
-
-.primary-nav li.academy {
-	background-color:$academyBlue;
-}
-
-.primary-nav li.store {
-  background-color:$storeColor;
-}
-
-.primary-nav li.live {
-  background-color:$liveColor;
-}
-
-/* ===== Secondary Navigation ===== */
-
-#sidebar>h3 {
-  margin:10px;
-}
-
-.secondary-nav, .secondary-nav>ul {
-  margin-top:0;
-  padding-left:10px;
-}
-
-.secondary-nav ul {
-  padding-left:20px;
-}
-
-.secondary-nav li {
-  position:relative;
-  list-style:none;
-  width:100%;
-}
-
-.secondary-nav a {
-  padding-bottom:5px;
-  display:inline-block;
-}
-
-.secondary-nav li ul {
+.mobile-nav {
   display:none;
 }
 
-.secondary-nav .current_page_item>ul, .secondary-nav .current_page_ancestor>ul {
+#sidebar>h3 {
+  margin:10px;
+  color:#242424;
+}
+
+.nav, .nav>ul {
+  margin-top:0;
+  padding-left:3px;
+}
+
+.nav ul {
+  padding-left:20px;
+}
+
+.nav li {
+  position:relative;
+  list-style:none;
+  width:100%;
+  border-top:1px solid lightgrey;
+  padding-left:7px;
+  padding-left:7px;
+}
+
+.nav a {
+  padding:3px 0;
+  display:inline-block;
+}
+
+.nav li ul {
+  display:none;
+}
+
+.nav .current_page_item>ul, .nav .current_page_ancestor>ul {
   display:block;
 }
 
-.secondary-nav .current_page_item>a {
+.nav .current_page_item>a {
   font-weight:bold;
-  color:$collegeGreen;
 }
 
 .toggle {
@@ -235,6 +239,34 @@ body .flexslider-hg.flexslider ul.slides > li:first-child {
 	opacity:1;
 }
 
+.flexslider-hg-corners-rounded {
+  border-radius:0 !important;
+}
+
+/* ===== Location Indicators =====*/
+
+h3.college, h3.academy {
+	display:none;
+}
+
+.college h3.college, .academy h3.academy {
+  display:block;
+}
+
+h3.college, h3.academy {
+	color:white;
+  margin:0;
+  padding:5px 25px;
+}
+
+h3.college {
+  background-color:#6AAC24;
+}
+
+h3.academy {
+  background-color:#4C8A9D;
+}
+
 /* ===== Content ===== */
 
 #content>header>h1 {
@@ -297,10 +329,15 @@ article {
   clear:both;
 }
 
+.plural {
+  overflow:hidden;
+}
+
 .plural>a:first-child img {
 	width:100%;
 	display:block;
 	padding-bottom:0;
+  border-radius:4px;
 }
 
 .plural>a:first-child {
@@ -478,20 +515,37 @@ article {
 /* ===== Media Queries ===== */
 
 @media all and (min-width: ohSizeStep($marginBreakPoint)) {
-	html {
+  .flexslider-hg-corners-rounded {
+	border-radius:4px 4px 0 0 !important;
+  }
+
+  .container {
+	border-left:ohSizeStep($sidebarWidth) solid #F5F5F5;
+	background-color: white;
+  }
+
+  .container {
+	border-radius:4px;
+  }
+
+  .home .container, .academyHome .container, .collegeHome .container, .college .container, .academy .container {
+	border-radius:0 0 4px 4px;
+  }
+
+  .college h3.college, .academy h3.academy {
+	border-radius:4px 4px 0 0;
+  }
+
+  .collegeHome h3.college, .academyHome h3.academy {
+	border-radius:0;
+  }
+
+	#wrapper {
 		width:80%;
 	}
 	
 	.main-header {
 		border-top:none;
-	}
-	
-	.primary-nav {
-		position: absolute;
-		right: 0;
-		top: -27px;
-	  height:27px;
-	  overflow:hidden;
 	}
 	
 	.page-template-page-template-no-sidebar-php .container {
