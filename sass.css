@@ -45,9 +45,15 @@ img {
   max-width: 100%;
   display: block; }
 
+<<<<<<< Updated upstream
 html {
   margin: 0 auto;
   background-color: #EFEFEF; }
+=======
+/* ===== Shortcodes Ultimate ===== */
+body .su-table table {
+  border: none !important; }
+>>>>>>> Stashed changes
 
 body {
   margin: 0;
