@@ -45,19 +45,10 @@ img {
   max-width: 100%;
   display: block; }
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-html {
-  margin: 0 auto;
-  background-color: #EFEFEF; }
-=======
 /* ===== Shortcodes Ultimate ===== */
 body .su-table table {
   border: none !important; }
->>>>>>> Stashed changes
 
-=======
->>>>>>> 80c26c7567f70245f80ad331c51f129e3d85f7ec
 body {
   margin: 0;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif;
