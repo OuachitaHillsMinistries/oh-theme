@@ -1,10 +1,5 @@
 // Layout
 
-html {
-  margin:0 auto;
-  background-color:#EFEFEF;
-}
-
 body {
   margin:0;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, "Lucida Grande", sans-serif;
@@ -12,20 +7,17 @@ body {
   font-size: ohSizeStep(1);
   height:100%;
   line-height:normal;
+  background-color: #e6e6e6;
+}
+
+#wrapper {
+  margin:0 auto;
 }
 
 .main-header {
   color:white;
   width:100%;
   position:relative;
-}
-
-.container {
-  @media all and (min-width: ohSizeStep($marginBreakPoint)) {
-    border-left:ohSizeStep($sidebarWidth) solid #F5F5F5;
-    border-radius: 0 0 4px 4px;
-    background-color: white;
-  }
 }
 
 #content {
@@ -35,6 +27,7 @@ body {
   @media all and (min-width: ohSizeStep($marginBreakPoint)) {
     float:right;
     width:100%;
+    border-radius:0 4px 4px 0;
   }
 }
 

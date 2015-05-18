@@ -4,26 +4,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
-	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/sass.css" />
 	<?php
-	wp_register_script( 'ohThemeJs', get_bloginfo('template_directory').'/javascript.js', array('jquery'));
-	wp_enqueue_script( 'ohThemeJs' );
-	wp_head();
+	registerStylesheets();
+	registerScripts();
 	?>
 </head>
 
-<?php
-if ( isCollege() && !isAcademy() ) {
-	$extraBodyClasses = 'college no-js';
-} elseif ( isAcademy() && !isCollege() ) {
-	$extraBodyClasses = 'academy no-js';
-} else {
-	$extraBodyClasses = 'home no-js';
-}
-?>
-
-<body <?php body_class($extraBodyClasses); ?>>
+<body <?php bodyClasses() ?>>
 	<div id="wrapper" class="hfeed">
 		<header class="main-header" role="banner">
 			<section class="branding">
@@ -36,11 +23,10 @@ if ( isCollege() && !isAcademy() ) {
 			</section>
 			<a href="#sidebar" class="nav-jump"><span>Nav</span></a>
 		</header>
-		<?php if ( is_home() ) {
-			echo do_shortcode('[flexslider slug=homepage]');
-		} elseif ( $post->post_title == "Academy" ) {
-			echo do_shortcode('[flexslider slug=academy]');
-		} elseif ( $post->post_title == "College" ) {
-			echo do_shortcode('[flexslider slug=college]');
-		} ?>
+		<div class="mobile-nav">
+			<?php navigation(); ?>
+		</div>
+		<?php slider() ?>
+		<h3 class="college">College</h3>
+		<h3 class="academy">Academy</h3>
 		<div class="container">
