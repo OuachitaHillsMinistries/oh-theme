@@ -13,9 +13,10 @@ echo "Re-compiling stylesheets..."
 sass style.scss style.css --style compressed
 echo "style.scss -> style.css (compressed)"
 
-sed -i -e '1i/*Theme Name: Ouachita Hills\\
-Version: 1.0.0\\
-*/\' style.css
+sed -i -e '1i*/\' style.css
+sed -i -e '1iVersion: 1.0.0\' style.css
+sed -i -e '1iTheme Name: Ouachita Hills\' style.css
+sed -i -e '1i/*\' style.css
 
 echo "Added WordPress theme comment"
 
