@@ -48,4 +48,8 @@ jQuery(document).ready(function() {
 	setupMobileNavToggling();
 	setupNavigationSubmenus();
 	setupSearchBoxDefaultText();
+
+	jQuery(document).on('click','#un-feedback-submit',function() {
+		console.log('Ow!');
+	});
 });

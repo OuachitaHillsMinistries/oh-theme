@@ -309,3 +309,11 @@ function set_flexslider_hg_rotators( $rotators = array() )
 
 }
 add_filter('flexslider_hg_rotators', 'set_flexslider_hg_rotators');
+
+function trackFeedbackSubmission() {
+	echo '<script type="text/javascript">
+		ga("send","event","form","contact");
+		console.log("Submission tracking attempted");
+	</script>';
+}
+add_action('un_feedback_created','trackFeedbackSubmission');
