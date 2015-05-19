@@ -1,2 +1,3 @@
 .idea/**/*
-sass.css.map
+style.css.map
+*.css

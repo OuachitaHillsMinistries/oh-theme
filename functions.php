@@ -75,7 +75,7 @@ function createImageSize() {
 }
 
 add_theme_support( 'post-thumbnails' );
-add_editor_style('sass.css'); // Add CSS to Visual Editor
+add_editor_style('style.css'); // Add CSS to Visual Editor
 
 function new_excerpt_more( $more ) {
 	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Continue Reading...</a>';
@@ -210,7 +210,7 @@ function shouldUseThumbnail()
 function registerStylesheets()
 {
 	wp_register_style('ohThemeStyle', get_stylesheet_uri());
-	wp_register_style('ohThemeSass', get_bloginfo('template_directory') . "/sass.css");
+	wp_register_style('ohThemeSass', get_bloginfo('template_directory') . "/style.css");
 	wp_enqueue_style('ohThemeStyle');
 	wp_enqueue_style('ohThemeSass');
 }
