@@ -13,5 +13,8 @@ echo "Re-compiling stylesheets..."
 sass style.scss style.css --style compressed
 echo "style.scss -> style.css (compressed)"
 
+sed -i -e '1i/*Theme Name: Ouachita Hills\Version: 1.0.0\*/\'
+echo "Added WordPress theme comment"
+
 echo "Sassification is complete"
 exit 0
