@@ -298,6 +298,33 @@ function bodyClasses() {
 	return body_class($classes);
 }
 
+function registerLandingPagePostType() {
+	$args = array(
+		'label' => 'Landing Pages',
+		'labels' => array(
+			'name' => 'Landing Pages',
+			'singular_name' => 'Landing Page',
+			'menu-name' => 'Landing Pages'
+		),
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => false,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'hierarchical' => false,
+		'menu_position' => 20,
+		'menu_icon' => 'dashicons-megaphone',
+		'supports' => array('title','editor','revisions')
+	);
+	register_post_type( 'ohLandingPage', $args );
+}
+
+add_action( 'init', 'registerLandingPagePostType' );
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )

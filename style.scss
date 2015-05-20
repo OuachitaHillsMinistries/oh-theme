@@ -366,6 +366,10 @@ article {
 	margin-top:0;
 }
 
+.single-ohlandingpage .entry-title {
+  display:none;
+}
+
 .read-more {
 	font-style:italic;
 	display:block;
@@ -375,6 +379,10 @@ article {
 .entry-footer {
 	line-height:22px;
   clear:both;
+}
+
+.single-ohlandingpage .entry-footer {
+  display:none;
 }
 
 #nav-below {
@@ -527,6 +535,10 @@ article {
   .container {
 	border-left:ohSizeStep($sidebarWidth) solid #F5F5F5;
 	background-color: white;
+  }
+
+  .single-ohlandingpage .container {
+	border:none;
   }
 
   .container {
