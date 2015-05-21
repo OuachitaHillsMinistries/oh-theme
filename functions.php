@@ -325,6 +325,14 @@ function registerLandingPagePostType() {
 
 add_action( 'init', 'registerLandingPagePostType' );
 
+function disableLandingPageVisualEditor($default) {
+	global $post;
+	$isLandingPage = get_post_type($post) == 'ohlandingpage';
+	return ($isLandingPage) ? false : $default;
+}
+
+add_filter('user_can_richedit','disableLandingPageVisualEditor');
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
