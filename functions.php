@@ -359,11 +359,20 @@ function ohSaveLandingPageCss( $post_id ) {
 	if ($isNonceUnset or $isNonceInvalid or $userLacksPermission or $isFieldNotSet) {
 		return;
 	}
-	
+
 	$my_data = implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['ohlandingpagecssfield'] ) ) );
 	update_post_meta( $post_id, 'ohlandingpagecss', $my_data );
 }
 add_action( 'save_post', 'ohSaveLandingPageCss' );
+
+function landingPageCss() {
+	$post = get_post();
+	$isLandingPage = get_post_type($post) == 'ohlandingpage';
+	if ($isLandingPage) {
+		$style = get_post_meta( $post->ID, 'ohlandingpagecss', true );
+		return "<style media='screen' type='text/css'>$style</style>";
+	}
+}
 
 # === FOR PLUGINS:
 

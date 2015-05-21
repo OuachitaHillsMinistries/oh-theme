@@ -7,6 +7,7 @@
 	<?php
 	registerStylesheets();
 	registerScripts();
+	echo landingPageCss();
 	?>
 </head>
 
