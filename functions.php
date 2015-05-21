@@ -320,7 +320,7 @@ function registerLandingPagePostType() {
 		'menu_icon' => 'dashicons-megaphone',
 		'supports' => array('title','editor','revisions')
 	);
-	register_post_type( 'ohLandingPage', $args );
+	register_post_type( 'ohlandingpage', $args );
 }
 
 add_action( 'init', 'registerLandingPagePostType' );
@@ -332,6 +332,38 @@ function disableLandingPageVisualEditor($default) {
 }
 
 add_filter('user_can_richedit','disableLandingPageVisualEditor');
+
+function myplugin_add_meta_box() {
+	add_meta_box(
+		'ohlandingpagecss',
+		'Landing Page CSS',
+		'ohLandingPageCssCallback',
+		'ohlandingpage'
+	);
+}
+add_action( 'add_meta_boxes', 'myplugin_add_meta_box' );
+
+function ohLandingPageCssCallback( $post ) {
+	wp_nonce_field( 'ohlandingpagecss', 'ohlandingpagecssnonce' );
+	$value = get_post_meta( $post->ID, 'ohlandingpagecss', true );
+
+	echo "<textarea  id='ohlandingpagecssfield' name='ohlandingpagecssfield' style='width:100%;' rows='20'>$value</textarea>";
+}
+
+function ohSaveLandingPageCss( $post_id ) {
+	$isNonceUnset = !isset($_POST['ohlandingpagecssnonce']);
+	$isNonceInvalid = !wp_verify_nonce($_POST['ohlandingpagecssnonce'], 'ohlandingpagecss');
+	$userLacksPermission = !current_user_can('edit_post', $post_id);
+	$isFieldNotSet = !isset($_POST['ohlandingpagecssfield']);
+	
+	if ($isNonceUnset or $isNonceInvalid or $userLacksPermission or $isFieldNotSet) {
+		return;
+	}
+	
+	$my_data = implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['ohlandingpagecssfield'] ) ) );
+	update_post_meta( $post_id, 'ohlandingpagecss', $my_data );
+}
+add_action( 'save_post', 'ohSaveLandingPageCss' );
 
 # === FOR PLUGINS:
 
