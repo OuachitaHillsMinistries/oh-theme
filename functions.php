@@ -367,11 +367,21 @@ add_action( 'save_post', 'ohSaveLandingPageCss' );
 
 function landingPageCss() {
 	$post = get_post();
-	$isLandingPage = get_post_type($post) == 'ohlandingpage';
-	if ($isLandingPage) {
+	if (isLandingPage($post)) {
 		$style = get_post_meta( $post->ID, 'ohlandingpagecss', true );
 		return "<style media='screen' type='text/css'>$style</style>";
 	}
+}
+
+function isLandingPage($post)
+{
+	return get_post_type($post) == 'ohlandingpage';
+}
+
+function htmlTitle() {
+	$post = get_post();
+	$title = (isLandingPage($post)) ? get_bloginfo( 'name' ) : wp_title( ' | ', false, 'right' );
+	return "<title>$title</title>";
 }
 
 # === FOR PLUGINS:
