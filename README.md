@@ -17,5 +17,7 @@ installation, the path was `/Users/masteredit3/.gem/ruby/1.8/bin/sass`.
 
 ## Based On
 BlankSlate WordPress Theme
+
 Demo: http://wp-themes.com/blankslate/
+
 Download: http://wordpress.org/themes/blankslate
