@@ -4,7 +4,7 @@ Theme for Ouachita Hills Ministries' website
 ## Setting Up Sass Compilation in PhpStorm
 
 These instructions are only for the purpose of setting up your development environment. When pushing to production, 
-`style.scss` is automatically compiled with the help of a GIT hook.
+`style.scss` is automatically compiled with the help of a GIT hook. All `.css` files are ignored in `.gitignore`.
 
 ### Mac OS X 10.6.8
 
