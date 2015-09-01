@@ -12,7 +12,7 @@ These instructions are only for the purpose of setting up your development envir
 2. Open the `oh-theme` folder in PhpStorm.
 3. Open `style.scss` for editing.
 4. A green info bar should appear at the top of the editor. Click "Add watcher."
-5. In the dialog that appears, paste the path to the sass gem (`sass.bat`) into the "Program" field. For my 
+5. In the dialog that appears, paste the path to the sass gem into the "Program" field. For my 
 installation, the path was `/Users/masteredit3/.gem/ruby/1.8/bin/sass`.
 
 ## Based On
