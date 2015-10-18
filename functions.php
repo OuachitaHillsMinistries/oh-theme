@@ -391,6 +391,29 @@ function addCategories() {
 
 add_action('init','addCategories');
 
+add_action('admin_init','addCustomMetaBoxes');
+
+function addCustomMetaBoxes() {
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    $template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
+
+    if ($template_file == 'page-template-category.php') {
+        var_dump($template_file);
+        add_meta_box(
+            'ohCategorySelector', 
+            'Select Category to Pull', 
+            'categorySelectorMetabox', 
+            'page', 
+            'normal', 
+            'high'
+        );
+    }
+}
+
+function categorySelectorMetabox() {
+    echo 'Our Custom Metabox';
+}
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
