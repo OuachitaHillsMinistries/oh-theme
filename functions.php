@@ -384,6 +384,13 @@ function htmlTitle() {
 	return "<title>$title</title>";
 }
 
+function addCategories() {
+    wp_insert_term('Academy','category');
+    wp_insert_term('College','category');
+}
+
+add_action('init','addCategories');
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
