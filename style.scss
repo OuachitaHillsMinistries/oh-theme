@@ -278,6 +278,19 @@ h3.academy {
 	margin: 20px;
 }
 
+.category-intro {
+  padding:0 20px;
+  overflow:hidden;
+}
+
+.college .category-intro {
+  background-color: #B9E68A;
+}
+
+.academy .category-intro {
+  background-color: #AEDCEB;
+}
+
 .alignright {
   float:right;
   margin:0 0 10px 10px;

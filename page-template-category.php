@@ -6,6 +6,9 @@ Template Name: Category
 
 <?php get_header(); ?>
 <section id="content" role="main">
+	<div class="category-intro">
+		<?php the_content(); ?>
+	</div>
 	<?php 
 	$categoryName = get_post_meta( get_the_ID(), 'Category', true );
 	$categoryID = get_category_id($categoryName);
