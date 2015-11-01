@@ -101,6 +101,12 @@ function createSettingsPanel() {
 
     $streamingUrl = get_option('streamingUrl');
 
+	if(isset($_POST['intro'])) {
+		update_option('ohIntro',$_POST['intro']);
+	}
+
+	$intro = get_option('ohIntro');
+
     echo "
         <h2>Ouachita Hills Theme Options</h2>
         <form method='post' action='$panelUrl'>
@@ -110,10 +116,22 @@ function createSettingsPanel() {
             <br />
             <input type=\"text\" name=\"streaming\" size=\"50\" value='$streamingUrl' />
             <br /><br />
+            <label for='intro'>
+                Front Page Introduction HTML:
+            </label>
+            <br />
+            <textarea rows='4' cols='50' name='intro'>$intro</textarea>
+            <br /><br />
             <input type='submit' value='Save Settings' />
         </form>
     ";
 
+}
+
+function displayHomePageIntro() {
+	if (is_front_page()) {
+		echo get_option('ohIntro');
+	}
 }
 
 function isAcademy() {
