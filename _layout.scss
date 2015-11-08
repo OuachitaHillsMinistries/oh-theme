@@ -18,12 +18,23 @@ body#tinymce {
 
 #wrapper {
   margin:0 auto;
+  min-height:100%;
+  margin-bottom:-100px;
+}
+
+#wrapper:after {
+  content:'';
+  display:block;
 }
 
 .main-header {
   color:white;
   width:100%;
   position:relative;
+}
+
+.container {
+  margin-bottom:20px;
 }
 
 #content {
@@ -55,7 +66,12 @@ body#tinymce {
   }
 }
 
+#footer, #wrapper:after {
+  height:100px;
+}
+
 #footer {
   padding:ohSizeStep(1);
   overflow:hidden;
+  background-color:lightgrey;
 }
