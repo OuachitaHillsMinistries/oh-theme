@@ -209,6 +209,7 @@ function shouldUseThumbnail()
 
 function registerStylesheets()
 {
+	wp_register_style('ohFontAwesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 	wp_register_style('ohThemeStyle', get_stylesheet_uri());
 	wp_register_style('ohThemeSass', get_bloginfo('template_directory') . "/style.css");
 	wp_enqueue_style('ohThemeStyle');

@@ -19,7 +19,7 @@ body#tinymce {
 #wrapper {
   margin:0 auto;
   min-height:100%;
-  margin-bottom:-100px;
+  margin-bottom:- $footerHeight;
 }
 
 #wrapper:after {
@@ -67,11 +67,17 @@ body#tinymce {
 }
 
 #footer, #wrapper:after {
-  height:100px;
+  height: $footerHeight;
 }
 
 #footer {
   padding:ohSizeStep(1);
   overflow:hidden;
   background-color:lightgrey;
+}
+
+.contact, .links, #copyright {
+  width:32.3%;
+  margin-right:3%;
+  float:left;
 }
