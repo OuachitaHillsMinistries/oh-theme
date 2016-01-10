@@ -391,27 +391,53 @@ function addCategories() {
 
 add_action('init','addCategories');
 
-add_action('admin_init','addCustomMetaBoxes');
+add_action('add_meta_boxes','addCustomMetaBoxes');
 
 function addCustomMetaBoxes() {
     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
     $template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
 
-    if ($template_file == 'page-template-category.php') {
+    $isUsingCategoryTemplate = $template_file == 'page-template-category.php';
+    
+    if ($isUsingCategoryTemplate) {
         var_dump($template_file);
+        var_dump($isUsingCategoryTemplate);
+        
         add_meta_box(
             'ohCategorySelector', 
             'Select Category to Pull', 
-            'categorySelectorMetabox', 
-            'page', 
-            'normal', 
-            'high'
+            'categorySelectorMetabox',
+            'page',
+            'side'
         );
     }
 }
 
-function categorySelectorMetabox() {
-    echo 'Our Custom Metabox';
+function categorySelectorMetabox($post) {
+    $categories = get_categories();
+    $currentCategory = get_post_meta($post->ID,'categoryPageCategory',true);
+    $options = array('<option>[None]</option>');
+    foreach ($categories as $category)
+        {
+        $isCurrentCategory = $category->name == $currentCategory;
+        $attrs = ($isCurrentCategory) ?  ' selected="selected"' : '';
+        $format = '<option%s>%s</option>';
+        $options[] = sprintf($format,$attrs,$category->name);
+        }
+    $format = '<select name="categoryPageCategory">%s</select>';
+    $selectBox = sprintf($format,implode($options));
+    $form = sprintf('<form>%s</form>',$selectBox);
+    echo $form;
+}
+
+add_action( 'save_post', 'ohthemeSaveCategorySelectorMetaboxData' );
+function ohthemeSaveCategorySelectorMetaboxData( $post_id ) {
+    if ( array_key_exists('categoryPageCategory', $_POST ) ) {
+        update_post_meta( $post_id,
+           'categoryPageCategory',
+            $_POST['categoryPageCategory']
+        );
+    }
 }
 
 # === FOR PLUGINS:

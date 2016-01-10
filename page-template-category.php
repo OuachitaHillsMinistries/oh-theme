@@ -7,7 +7,10 @@ Template Name: Category
 <?php get_header(); ?>
 <section id="content" role="main">
 	<?php 
-	$categoryName = get_post_meta( get_the_ID(), 'Category', true );
+	$categoryName = get_post_meta( get_the_ID(), 'categoryPageCategory', true );
+        
+        
+        
 	$categoryID = get_category_id($categoryName);
 	$args = array ( 'category' => $categoryID, 'posts_per_page' => 5);
 	$myposts = get_posts( $args );
