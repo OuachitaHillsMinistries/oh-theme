@@ -117,10 +117,9 @@ function createSettingsPanel() {
 }
 
 function isAcademy() {
-	if (is_category('College') || is_home()) {
+	if (is_category('College') || is_home() || is_search()) {
 		return False;
-	}
-	if (topParent()->post_title == 'Academy' || in_category('Academy') || is_category('Academy')) {
+	} else if (relatesToCategory('Academy')) {
 		return True;
 	} else {
 		return False;
@@ -128,14 +127,18 @@ function isAcademy() {
 }
 
 function isCollege() {
-	if (is_category('Academy') || is_home()) {
+	if (is_category('Academy') || is_home() || is_search()) {
 		return False;
-	}
-	if (topParent()->post_title == 'College' || in_category('College') || is_category('College')) {
+	} else if (relatesToCategory('College')) {
 		return True;
 	} else {
 		return False;
 	}
+}
+
+function relatesToCategory($category)
+{
+	return topParent()->post_title == $category || in_category($category) || is_category($category);
 }
 
 function topParent() {
