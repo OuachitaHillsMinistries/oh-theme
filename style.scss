@@ -517,7 +517,7 @@ article {
 /* ===== Footer ===== */
 
 .contact, .links, #copyright {
-  border-right: 1px solid darkgray;
+  border-right: 1px solid dimgrey;
   height: 100%;
 }
 
@@ -533,6 +533,16 @@ article {
 .links img {
   float: right;
   margin: 5px;
+  opacity: .7;
+}
+
+.links img.github {
+  filter:invert(100%);
+  -webkit-filter:invert(100%);
+}
+
+.links img:hover {
+  opacity:1;
 }
 
 /* ===== Media Queries ===== */
