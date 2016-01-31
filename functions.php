@@ -384,6 +384,62 @@ function htmlTitle() {
 	return "<title>$title</title>";
 }
 
+function addCategories() {
+    wp_insert_term('Academy','category');
+    wp_insert_term('College','category');
+}
+
+add_action('init','addCategories');
+
+add_action('add_meta_boxes','addCustomMetaBoxes');
+
+function addCustomMetaBoxes() {
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    $template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
+
+    $isUsingCategoryTemplate = $template_file == 'page-template-category.php';
+    
+    if ($isUsingCategoryTemplate) {
+        var_dump($template_file);
+        var_dump($isUsingCategoryTemplate);
+        
+        add_meta_box(
+            'ohCategorySelector', 
+            'Select Category to Pull', 
+            'categorySelectorMetabox',
+            'page',
+            'side'
+        );
+    }
+}
+
+function categorySelectorMetabox($post) {
+    $categories = get_categories();
+    $currentCategory = get_post_meta($post->ID,'categoryPageCategory',true);
+    $options = array('<option>[None]</option>');
+    foreach ($categories as $category)
+        {
+        $isCurrentCategory = $category->name == $currentCategory;
+        $attrs = ($isCurrentCategory) ?  ' selected="selected"' : '';
+        $format = '<option%s>%s</option>';
+        $options[] = sprintf($format,$attrs,$category->name);
+        }
+    $format = '<select name="categoryPageCategory">%s</select>';
+    $selectBox = sprintf($format,implode($options));
+    $form = sprintf('<form>%s</form>',$selectBox);
+    echo $form;
+}
+
+add_action( 'save_post', 'ohthemeSaveCategorySelectorMetaboxData' );
+function ohthemeSaveCategorySelectorMetaboxData( $post_id ) {
+    if ( array_key_exists('categoryPageCategory', $_POST ) ) {
+        update_post_meta( $post_id,
+           'categoryPageCategory',
+            $_POST['categoryPageCategory']
+        );
+    }
+}
+
 # === FOR PLUGINS:
 
 function set_flexslider_hg_rotators( $rotators = array() )
