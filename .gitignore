@@ -3,3 +3,4 @@ style.css.map
 *.css
 .sass-cache
 /nbproject/**/*
+.DS_Store
